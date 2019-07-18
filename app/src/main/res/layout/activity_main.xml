@@ -27,8 +27,7 @@
       android:layout_width="match_parent"
       android:layout_height="match_parent" />
 
-  <ListView xmlns:android="http://schemas.android.com/apk/res/android"
-      xmlns:tools="http://schemas.android.com/tools"
+  <ListView
       android:id="@+id/dsp_navigation_drawer"
       android:background="@color/navigation_drawerdark"
       android:layout_width="260dp"
