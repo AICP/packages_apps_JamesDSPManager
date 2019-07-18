@@ -1,12 +1,15 @@
 package james.dsp.activity;
 
+import android.app.FragmentTransaction;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
 import android.os.Bundle;
+import android.preference.Preference;
 import android.preference.PreferenceFragment;
+
 import james.dsp.R;
 import james.dsp.preference.EqualizerPreference;
 import james.dsp.preference.SummariedListPreference;
@@ -18,7 +21,7 @@ import james.dsp.service.HeadsetService;
  * and a listener that ensures that our {@link HeadsetService} is running if
  * required.
  *
- * @Co-founder alankila
+ * Co-founder alankila
  */
 public final class DSPScreen extends PreferenceFragment
 {
@@ -37,7 +40,7 @@ public final class DSPScreen extends PreferenceFragment
                 {
                     Editor e = sharedPreferences.edit();
                     e.putString("dsp.tone.eq.custom", newValue);
-                    e.commit();
+                    e.apply();
                     /* Now tell the equalizer that it must display something else. */
                     EqualizerPreference eq = (EqualizerPreference)
                                              getPreferenceScreen().findPreference("dsp.tone.eq.custom");
@@ -60,11 +63,11 @@ public final class DSPScreen extends PreferenceFragment
                     }
                 }
                 /* Tell listpreference that it must display something else. */
-                if (!desiredValue.equals(preset.getEntry()))
+                if (!desiredValue.contentEquals(preset.getEntry()))
                 {
                     Editor e = sharedPreferences.edit();
                     e.putString("dsp.tone.eq", desiredValue);
-                    e.commit();
+                    e.apply();
                     preset.refreshFromPreference();
                 }
             }
@@ -77,7 +80,7 @@ public final class DSPScreen extends PreferenceFragment
     public void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        String config = getArguments().getString("config");
+        final String config = getArguments().getString("config");
         getPreferenceManager().setSharedPreferencesName(
             DSPManager.SHARED_PREFERENCES_BASENAME + "." + config);
         getPreferenceManager().setSharedPreferencesMode(Context.MODE_MULTI_PROCESS);
@@ -92,6 +95,27 @@ public final class DSPScreen extends PreferenceFragment
         }
         getPreferenceManager().getSharedPreferences()
         .registerOnSharedPreferenceChangeListener(listener);
+
+        Preference preference = getPreferenceManager().findPreference("advanced.options");
+        if (preference != null) {
+            preference.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+                @Override
+                public boolean onPreferenceClick(Preference preference) {
+                    Bundle bundle = new Bundle();
+                    bundle.putString("config", config);
+
+                    AdvancedOptions advancedOptions = new AdvancedOptions();
+                    advancedOptions.setArguments(bundle);
+
+                    FragmentTransaction ft = getFragmentManager().beginTransaction();
+                    ft.replace(R.id.dsp_container, advancedOptions);
+                    ft.addToBackStack(null);
+                    ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
+                    ft.commit();
+                    return true;
+                }
+            });
+        }
     }
 
     @Override

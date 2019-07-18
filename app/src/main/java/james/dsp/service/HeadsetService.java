@@ -39,6 +39,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
 import james.dsp.activity.JdspImpResToolbox;
+
+import static james.dsp.activity.DSPManager.TAG;
+
 /**
 * <p>This calls listen to events that affect DSP function and responds to them.</p>
 * <ol>
@@ -337,7 +340,7 @@ public class HeadsetService extends Service
 				JDSPModule fxId = new JDSPModule(sessionId);
 				if (fxId.JamesDSP == null)
 				{
-					Log.e(DSPManager.TAG, "Audio session load fail");
+					Log.e(TAG, "Audio session load fail");
 					fxId.release();
 					fxId = null;
 				}
@@ -506,16 +509,16 @@ class StartUpOptimiserThread implements Runnable {
             mUseBluetooth = mAudioManager.isBluetoothA2dpOn();
             if (mUseBluetooth)
             {
-                Log.i(DSPManager.TAG, "Bluetooth mode");
+                Log.i(TAG, "Bluetooth mode");
                 mUseHeadset = false;
             }
             else
             {
                 mUseHeadset = mAudioManager.isWiredHeadsetOn();
                 if (mUseHeadset)
-                    Log.i(DSPManager.TAG, "Headset mode");
+                    Log.i(TAG, "Headset mode");
                 else
-                    Log.i(DSPManager.TAG, "Speaker mode");
+                    Log.i(TAG, "Speaker mode");
             }
         }
 		iconLarge = BitmapFactory.decodeResource(getResources(), R.drawable.icon);
@@ -575,7 +578,7 @@ class StartUpOptimiserThread implements Runnable {
 			if (JamesDSPGbEf == null) {
 				JamesDSPGbEf = new JDSPModule(0);
 				if (JamesDSPGbEf.JamesDSP == null) {
-					Log.e(DSPManager.TAG, "Global audio session load fail, reload it now!");
+					Log.e(TAG, "Global audio session load fail, reload it now!");
 					JamesDSPGbEf.release();
 					JamesDSPGbEf = null;
 					return super.onStartCommand(intent, flags, startId);
@@ -584,18 +587,18 @@ class StartUpOptimiserThread implements Runnable {
 				return super.onStartCommand(intent, flags, startId);
 			}
 			if (JamesDSPGbEf.JamesDSP == null) {
-				Log.e(DSPManager.TAG, "Global audio session load fail, reload it now!");
+				Log.e(TAG, "Global audio session load fail, reload it now!");
 				JamesDSPGbEf.release();
 				JamesDSPGbEf = new JDSPModule(0);
 				if (JamesDSPGbEf.JamesDSP == null) {
-					Log.e(DSPManager.TAG, "Global audio session load fail, reload it now!");
+					Log.e(TAG, "Global audio session load fail, reload it now!");
 					JamesDSPGbEf.release();
 					JamesDSPGbEf = null;
 					return super.onStartCommand(intent, flags, startId);
 				}
 				return super.onStartCommand(intent, flags, startId);
 			}
-			Log.i(DSPManager.TAG, "Global audio session created!");
+			Log.i(TAG, "Global audio session created!");
 			updateDsp(false, true);
 		}
 		return super.onStartCommand(intent, flags, startId);
@@ -635,6 +638,7 @@ class StartUpOptimiserThread implements Runnable {
 		modeEffect = preferencesMode.getInt("dsp.app.modeEffect", 0);
 		final String mode = getAudioOutputRouting();
 		SharedPreferences preferences = getSharedPreferences(DSPManager.SHARED_PREFERENCES_BASENAME + "." + mode, 0);
+		SharedPreferences advancedPref = getSharedPreferences(DSPManager.SHARED_PREFERENCES_BASENAME + "." + "advanced" + "." + mode, 0);
 		if (notify)
 		{
 			String pid = "";
@@ -654,7 +658,7 @@ class StartUpOptimiserThread implements Runnable {
 		{
 			try
 			{
-				updateDsp(preferences, JamesDSPGbEf, updateConvolver, 0);
+				updateDsp(preferences, advancedPref, JamesDSPGbEf, updateConvolver, 0);
 			}
 			catch (Exception e)
 			{
@@ -666,7 +670,7 @@ class StartUpOptimiserThread implements Runnable {
 			{
 				try
 				{
-					updateDsp(preferences, mAudioSessions.get(sessionId), updateConvolver, sessionId);
+					updateDsp(preferences, advancedPref, mAudioSessions.get(sessionId), updateConvolver, sessionId);
 				}
 				catch (Exception e)
 				{
@@ -676,7 +680,7 @@ class StartUpOptimiserThread implements Runnable {
 		}
 	}
 
-	private void updateDsp(SharedPreferences preferences, JDSPModule session, boolean updateMajor, int sessionId)
+	private void updateDsp(SharedPreferences preferences, SharedPreferences advancedPref, JDSPModule session, boolean updateMajor, int sessionId)
 	{
 		boolean masterSwitch = preferences.getBoolean("dsp.masterswitch.enable", false);
 		session.JamesDSP.setEnabled(masterSwitch); // Master switch
@@ -709,35 +713,36 @@ class StartUpOptimiserThread implements Runnable {
 				session.setParameterFloatArray(session.JamesDSP, 1997, bench_c0);
 				session.setParameterFloatArray(session.JamesDSP, 1998, bench_c1);
 			}
-			float limthreshold = Float.valueOf(preferences.getString("dsp.masterswitch.limthreshold", "-0.1"));
-			float limrelease = Float.valueOf(preferences.getString("dsp.masterswitch.limrelease", "60"));
+			float limthreshold = Float.valueOf(advancedPref.getString("dsp.masterswitch.limthreshold", "-0.1"));
+			float limrelease = Float.valueOf(advancedPref.getString("dsp.masterswitch.limrelease", "60"));
 			if (prelimthreshold != limthreshold || prelimrelease != limrelease)
 				session.setParameterFloatArray(session.JamesDSP, 1500, new float[]{ limthreshold, limrelease });
 			prelimthreshold = limthreshold;
 			prelimrelease = limrelease;
 			if (compressorEnabled == 1 && updateMajor)
 			{
-				session.setParameterShort(session.JamesDSP, 100, Short.valueOf(preferences.getString("dsp.compression.pregain", "12")));
-				session.setParameterShort(session.JamesDSP, 101, (short)Math.abs(Short.valueOf(preferences.getString("dsp.compression.threshold", "-60"))));
-				session.setParameterShort(session.JamesDSP, 102, Short.valueOf(preferences.getString("dsp.compression.knee", "30")));
-				session.setParameterShort(session.JamesDSP, 103, Short.valueOf(preferences.getString("dsp.compression.ratio", "12")));
-				session.setParameterShort(session.JamesDSP, 104, (short)(Float.valueOf((preferences.getString("dsp.compression.attack", "0.01")))*1000));
-				session.setParameterShort(session.JamesDSP, 105, (short)(Float.valueOf((preferences.getString("dsp.compression.release", "0.01")))*1000));
+				session.setParameterShort(session.JamesDSP, 100, Short.valueOf(advancedPref.getString("dsp.compression.pregain", "12")));
+				Log.e(TAG, String.valueOf(session.getParameter(session.JamesDSP, 100)));
+				session.setParameterShort(session.JamesDSP, 101, (short)Math.abs(Short.valueOf(advancedPref.getString("dsp.compression.threshold", "-60"))));
+				session.setParameterShort(session.JamesDSP, 102, Short.valueOf(advancedPref.getString("dsp.compression.knee", "30")));
+				session.setParameterShort(session.JamesDSP, 103, Short.valueOf(advancedPref.getString("dsp.compression.ratio", "12")));
+				session.setParameterShort(session.JamesDSP, 104, (short)(Float.valueOf((advancedPref.getString("dsp.compression.attack", "0.01")))*1000));
+				session.setParameterShort(session.JamesDSP, 105, (short)(Float.valueOf((advancedPref.getString("dsp.compression.release", "0.01")))*1000));
 			}
 			session.setParameterShort(session.JamesDSP, 1200, (short)compressorEnabled); // Compressor switch
 			session.setParameterShort(session.JamesDSP, 1201, (short)bassBoostEnabled); // Bass boost switch
 			if (bassBoostEnabled == 1 && updateMajor)
 			{
 				session.setParameterShort(session.JamesDSP, 112, Short.valueOf(preferences.getString("dsp.bass.mode", "80")));
-				short filtertype = Short.valueOf(preferences.getString("dsp.bass.filtertype", "0"));
+				short filtertype = Short.valueOf(advancedPref.getString("dsp.bass.filtertype", "0"));
 				session.setParameterShort(session.JamesDSP, 113, filtertype);
-				short freq = Short.valueOf(preferences.getString("dsp.bass.freq", "55"));
+				short freq = Short.valueOf(advancedPref.getString("dsp.bass.freq", "55"));
 				session.setParameterShort(session.JamesDSP, 114, freq);
 				if(DSPManager.devMsgDisplay)
 				if(filtertype == 0 && freq < 90)
 						Toast.makeText(HeadsetService.this, R.string.preferredlpf, Toast.LENGTH_SHORT).show();
 			}
-			session.setParameterShort(session.JamesDSP, 151, Short.valueOf(preferences.getString("dsp.tone.filtertype", "0")));
+			session.setParameterShort(session.JamesDSP, 151, Short.valueOf(advancedPref.getString("dsp.tone.filtertype", "0")));
 			session.setParameterShort(session.JamesDSP, 1202, (short)equalizerEnabled); // Equalizer switch
 			if (equalizerEnabled == 1)
 			{
@@ -765,7 +770,7 @@ class StartUpOptimiserThread implements Runnable {
 			if (bs2bEnabled == 1 && updateMajor)
 				session.setParameterShort(session.JamesDSP, 188, Short.valueOf(preferences.getString("dsp.bs2b.mode", "0")));
 			if (analogModelEnabled == 1 && updateMajor)
-				session.setParameterShort(session.JamesDSP, 150, (short) (Float.valueOf(preferences.getString("dsp.analogmodelling.tubedrive", "2"))*1000));
+				session.setParameterShort(session.JamesDSP, 150, (short) (Float.valueOf(advancedPref.getString("dsp.analogmodelling.tubedrive", "2"))*1000));
 			session.setParameterShort(session.JamesDSP, 1206, (short)analogModelEnabled); // Analog modelling switch
 			if (viperddcEnabled == 1 && updateMajor)
 			{
