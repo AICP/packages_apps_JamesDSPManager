@@ -58,7 +58,7 @@
 
     <PreferenceCategory android:title="@string/pref_bassboost_title">
         <james.dsp.preference.SummariedListPreference
-            android:defaultValue="0"
+            android:defaultValue="1"
             android:dialogTitle="@string/dialog_filtertype"
             android:entries="@array/bassboost_filtertype"
             android:entryValues="@array/bassboost_filtertype_values"
