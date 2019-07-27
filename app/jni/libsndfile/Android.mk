@@ -1,6 +1,6 @@
 LOCAL_PATH := $(call my-dir)
 include $(CLEAR_VARS)
-LOCAL_MODULE := libsndfile
+LOCAL_MODULE := libsndfile_custom
 C_FILE_LIST := $(call all-subdir-c-files) \
                 $(wildcard $(LOCAL_PATH)/G72x/*.c) \
                 $(wildcard $(LOCAL_PATH)/GSM610/*.c) \
