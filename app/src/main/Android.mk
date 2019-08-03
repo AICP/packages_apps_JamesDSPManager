@@ -22,6 +22,8 @@ LOCAL_PRIVATE_PLATFORM_APIS := true
 
 LOCAL_PACKAGE_NAME := JamesDSPManager
 
+LOCAL_OVERRIDES_PACKAGES := MusicFX
+
 include $(BUILD_PACKAGE)
 
 # Use the folloing include to make our test apk.
