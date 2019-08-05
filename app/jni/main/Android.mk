@@ -1,6 +1,11 @@
 LOCAL_PATH := $(call my-dir)
 include $(CLEAR_VARS)
 LOCAL_MODULE := libjamesDSPImpulseToolbox
+
+ifeq ($(TARGET_JAMESDSP_VENDOR),true)
+        LOCAL_VENDOR_MODULE := true
+endif
+
 LOCAL_SRC_FILES := kissfft/kiss_fft.c kissfft/kiss_fftr.c JdspImpResToolbox.c AutoConvolver.c
 LOCAL_STATIC_LIBRARIES = libsndfile_custom libsamplerate
 LOCAL_CPPFLAGS += -ffunction-sections -fdata-sections -Ofast -ftree-vectorize -DNDEBUG
