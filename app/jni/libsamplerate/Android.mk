@@ -1,6 +1,11 @@
 LOCAL_PATH := $(call my-dir)
 include $(CLEAR_VARS)
 LOCAL_MODULE := libsamplerate
+
+ifeq ($(TARGET_JAMESDSP_VENDOR),true)
+        LOCAL_VENDOR_MODULE := true
+endif
+
 C_FILE_LIST := $(call all-subdir-c-files) \
                 $(wildcard $(LOCAL_PATH)/*.c)
 LOCAL_SRC_FILES := $(C_FILE_LIST:$(LOCAL_PATH)/%=%)
