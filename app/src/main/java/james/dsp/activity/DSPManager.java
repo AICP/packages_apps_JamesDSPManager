@@ -20,13 +20,7 @@ import android.content.res.Resources;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
-import android.support.annotation.RequiresApi;
-import android.support.v13.app.FragmentPagerAdapter;
-import android.support.v7.app.ActionBarDrawerToggle;
 import android.util.Log;
-import android.support.v4.content.res.ResourcesCompat;
-import android.support.v4.view.GravityCompat;
-import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -37,6 +31,12 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
+import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.core.content.res.ResourcesCompat;
+import androidx.core.view.GravityCompat;
+import androidx.legacy.app.FragmentPagerAdapter;
+import androidx.viewpager.widget.ViewPager;
 
 import james.dsp.R;
 import james.dsp.service.HeadsetService;
@@ -799,3 +799,4 @@ public final class DSPManager extends Activity
 
 
 }
+
