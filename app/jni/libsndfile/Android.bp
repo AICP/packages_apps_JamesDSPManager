@@ -1,0 +1,13 @@
+cc_library_static {
+    name: "libsndfile_custom",
+    srcs: [
+        "*.c",
+        "G72x/*.c",
+        "GSM610/*.c",
+        "ALAC/*.c",
+    ],
+    static_libs: [
+        "libFLAC"
+    ],
+}
+

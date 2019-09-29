@@ -1,0 +1,8 @@
+cc_library_static {
+    name: "libsamplerate",
+    srcs: [
+        "*.c",
+    ],
+}
+
+
