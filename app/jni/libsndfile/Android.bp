@@ -1,0 +1,27 @@
+cc_library_static {
+    name: "libsndfile_custom",
+    cflags: [
+        "-ffunction-sections",
+        "-fdata-sections",
+        "-Ofast",
+        "-ftree-vectorize",
+        "-DNDEBUG"
+    ],
+    cppflags: [
+        "-ffunction-sections",
+        "-fdata-sections",
+        "-Ofast",
+        "-ftree-vectorize",
+        "-DNDEBUG"
+    ],
+    srcs: [
+        "*.c",
+        "G72x/*.c",
+        "GSM610/*.c",
+        "ALAC/*.c",
+    ],
+    static_libs: [
+        "libFLAC"
+    ],
+}
+

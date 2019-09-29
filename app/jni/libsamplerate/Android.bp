@@ -1,0 +1,24 @@
+cc_library_static {
+    name: "libsamplerate",
+    cflags: [
+        "-ffunction-sections",
+        "-fdata-sections",
+        "-Ofast",
+        "-ftree-vectorize",
+        "-DHAVE_CONFIG_H",
+        "-DFLAC__NO_MD5",
+        "-DNDEBUG"
+    ],
+    cppflags: [
+        "-ffunction-sections",
+        "-fdata-sections",
+        "-Ofast",
+        "-ftree-vectorize",
+        "-DNDEBUG"
+    ],
+    srcs: [
+        "*.c",
+    ],
+}
+
+
