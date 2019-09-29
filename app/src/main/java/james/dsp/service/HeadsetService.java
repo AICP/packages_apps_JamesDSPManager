@@ -20,9 +20,9 @@ import android.media.audiofx.AudioEffect;
 import android.os.Binder;
 import android.os.Build;
 import android.os.IBinder;
-import android.support.v4.app.NotificationCompat;
 import android.util.Log;
 import android.widget.Toast;
+import androidx.core.app.NotificationCompat;
 import james.dsp.R;
 import james.dsp.activity.DSPManager;
 
@@ -875,3 +875,4 @@ class StartUpOptimiserThread implements Runnable {
 		}
 	}
 }
+

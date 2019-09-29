@@ -1,8 +1,8 @@
 package james.dsp.widgets;
 
 import android.content.Context;
-import android.support.v4.widget.DrawerLayout;
 import android.util.AttributeSet;
+import androidx.drawerlayout.widget.DrawerLayout;
 
 public class CustomDrawerLayout extends DrawerLayout
 {

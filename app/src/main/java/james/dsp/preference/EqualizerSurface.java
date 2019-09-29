@@ -10,11 +10,11 @@ import android.graphics.Path;
 import android.graphics.Shader;
 import android.os.Bundle;
 import android.os.Parcelable;
-import android.support.v4.content.ContextCompat;
-import android.support.v4.content.res.ResourcesCompat;
 import android.util.AttributeSet;
 import android.view.SurfaceView;
 import android.view.View;
+import androidx.core.content.ContextCompat;
+import androidx.core.content.res.ResourcesCompat;
 import james.dsp.R;
 import james.dsp.activity.DSPManager;
 
@@ -277,3 +277,4 @@ public class EqualizerSurface extends SurfaceView
         return idx;
     }
 }
+
