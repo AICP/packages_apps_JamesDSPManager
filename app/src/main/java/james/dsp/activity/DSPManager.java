@@ -63,7 +63,7 @@ import android.widget.Toast;
 */
 public final class DSPManager extends Activity
 {
-    public static final String NOTIFICATION_CHANNEL = "1";
+    public static final String NOTIFICATION_CHANNEL = "james_dsp_channel";
 	public static Context actUi = null;
 
     //==================================
@@ -787,8 +787,9 @@ public final class DSPManager extends Activity
     private void initializeNotificationChannel() {
         final CharSequence name = getString(R.string.notification_channel_name);
         final int importance = NotificationManager.IMPORTANCE_LOW;
+        final String ChannelId = "01";
 
-        NotificationChannel channel = new NotificationChannel(NOTIFICATION_CHANNEL, name, importance);
+        NotificationChannel channel = new NotificationChannel(ChannelId, name, importance);
 
         // Register the channel with the system; you can't change the importance
         // or other notification behaviors after this

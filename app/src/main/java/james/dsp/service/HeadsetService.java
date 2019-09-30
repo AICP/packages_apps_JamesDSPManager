@@ -1,8 +1,5 @@
 package james.dsp.service;
 
-import android.app.Notification;
-import android.app.NotificationChannel;
-import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.app.Service;
 import android.bluetooth.BluetoothAdapter;
@@ -40,6 +37,7 @@ import java.util.Map;
 import java.util.UUID;
 import james.dsp.activity.JdspImpResToolbox;
 
+import static james.dsp.activity.DSPManager.NOTIFICATION_CHANNEL;
 import static james.dsp.activity.DSPManager.TAG;
 
 /**
@@ -426,24 +424,17 @@ public class HeadsetService extends Service
 	};
 	private void foregroundPersistent(String mFXType)
 	{
-		int mIconIDSmall = getResources().getIdentifier("ic_stat_icon", "drawable", getApplicationInfo().packageName);
 		Intent notificationIntent = new Intent(this, DSPManager.class);
-		PendingIntent contentItent = PendingIntent.getActivity(this, 0, notificationIntent, 0);
-
-		final CharSequence name = getString(R.string.notification_channel_name);
-		final int importance = NotificationManager.IMPORTANCE_LOW;
+		PendingIntent contentIntent = PendingIntent.getActivity(this, 0, notificationIntent, 0);
 
 		if (Build.VERSION.SDK_INT >= 26) {
-			String CHANNEL_ID = "01";
-			NotificationChannel channel = new NotificationChannel(CHANNEL_ID, name, importance);
+			NotificationCompat.Builder builder = new NotificationCompat.Builder(this, NOTIFICATION_CHANNEL);
+			builder.setSmallIcon(R.drawable.notification_icon);
+			builder.setContentTitle(getString(james.dsp.R.string.notification_string));
+			builder.setContentIntent(contentIntent);
+			builder.setPriority(NotificationCompat.PRIORITY_LOW);
 
-			((NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE)).createNotificationChannel(channel);
-
-			Notification notification = new NotificationCompat.Builder(this, CHANNEL_ID)
-					.setContentTitle("")
-					.setContentText("").build();
-
-			startForeground(1, notification);
+			startForeground(1, builder.build());
 		}
 	}
 
@@ -475,20 +466,13 @@ class StartUpOptimiserThread implements Runnable {
 	{
 		super.onCreate();
 
-		final CharSequence name = getString(R.string.notification_channel_name);
-		final int importance = NotificationManager.IMPORTANCE_LOW;
-
 		if (Build.VERSION.SDK_INT >= 26) {
-			String CHANNEL_ID = "my_channel_01";
-			NotificationChannel channel = new NotificationChannel(CHANNEL_ID, name, importance);
+			NotificationCompat.Builder builder = new NotificationCompat.Builder(this, NOTIFICATION_CHANNEL);
+			builder.setSmallIcon(R.drawable.notification_icon);
+			builder.setContentTitle(getString(james.dsp.R.string.notification_string));
+			builder.setPriority(NotificationCompat.PRIORITY_LOW);
 
-			((NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE)).createNotificationChannel(channel);
-
-			Notification notification = new NotificationCompat.Builder(this, CHANNEL_ID)
-					.setContentTitle("")
-					.setContentText("").build();
-
-			startForeground(1, notification);
+			startForeground(1, builder.build());
 		}
 
 		IntentFilter audioFilter = new IntentFilter();
