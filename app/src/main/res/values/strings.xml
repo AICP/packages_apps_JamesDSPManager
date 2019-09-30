@@ -139,4 +139,5 @@
     GUI Author: Antti S. Lankila \n
   </string>
     <string name="advanced_options">Advanced Options</string>
+  <string name="notification_string">JamesDSP is being executed</string>
 </resources>
