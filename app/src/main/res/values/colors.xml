@@ -23,10 +23,11 @@
   <color name="freq_hl">#2000ddff</color>
   <color name="freq_hl2">#4033b5e5</color>
 
-  <color name="eq_reddark">#80ffffff</color>
-  <color name="eq_yellowdark">#80ffff00</color>
-  <color name="eq_holo_brightdark">#80ff0000</color>
-  <color name="eq_holo_bluedark">#80ff00ff</color>
-  <color name="eq_holo_darkdark">#80000080</color>
+
+  <color name="eq_high">#2B9184</color>
+  <color name="eq_mid_high">#C6335FA2</color>
+  <color name="eq_mid">#A52559</color>
+  <color name="eq_mid_low">#80ff00ff</color>
+  <color name="eq_low">#80000080</color>
 
 </resources>
