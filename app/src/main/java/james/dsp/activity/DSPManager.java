@@ -509,7 +509,6 @@ public final class DSPManager extends Activity
     {
         mFragmentContainerView = fragmentContainerView;
         mDrawerLayout = (CustomDrawerLayout)drawerLayout;
-        mDrawerLayout.setDrawerShadow(R.drawable.drawer_shadow, GravityCompat.START);
         mDrawerToggle = new ActionBarDrawerToggle(
             this,
             mDrawerLayout,
