@@ -10,9 +10,6 @@
       android:id="@+id/mdisplaydevmsg"
       android:title="@string/displaydevmsg"/>
   <item
-      android:id="@+id/themeswitch"
-      android:title="@string/theme"/>
-  <item
       android:id="@+id/globaleffectitm"
       android:title="@string/globaleffect_title"/>
   <item
