@@ -111,27 +111,11 @@ public final class DSPManager extends Activity
     //==================================
     private SharedPreferences preferencesMode;
     private CharSequence mTitle;
-    public static int themeApp;
     public static int effectMode;
+
     //==================================
     // Overridden Methods
     //==================================
-    @Override
-    public Resources.Theme getTheme()
-    {
-        Resources.Theme theme = super.getTheme();
-        if(themeApp == 0)
-            theme.applyStyle(android.R.style.Theme_Material, true);
-        else if(themeApp == 1)
-            theme.applyStyle(android.R.style.Theme_Material_Light, true);
-        else if(themeApp == 2)
-            theme.applyStyle(R.style.AppTheme, true);
-        else if(themeApp == 3)
-            theme.applyStyle(R.style.AppThemeRed, true);
-        else if(themeApp == 4)
-            theme.applyStyle(R.style.AppThemeIdea, true);
-        return theme;
-    }
 	private final BroadcastReceiver updateReceiver = new BroadcastReceiver()
 	{
 		@Override
@@ -164,12 +148,9 @@ public final class DSPManager extends Activity
             preferences.edit().putString("dsp.ddc.files", getString(R.string.ddcdoesntexist)).commit();
         if (!preferencesMode.contains("dsp.app.showdevmsg"))
             preferencesMode.edit().putBoolean("dsp.app.showdevmsg", false).commit();
-        if (!preferencesMode.contains("dsp.app.theme"))
-            preferencesMode.edit().putInt("dsp.app.theme", 2).commit();
         if (!preferencesMode.contains("dsp.app.modeEffect"))
         	preferencesMode.edit().putInt("dsp.app.modeEffect", 0).commit();
         devMsgDisplay = preferencesMode.getBoolean("dsp.app.showdevmsg", false);
-        themeApp = preferencesMode.getInt("dsp.app.theme", 2);
         effectMode = preferencesMode.getInt("dsp.app.modeEffect", 0);
         mUserLearnedDrawer = preferencesMode.getBoolean(PREF_USER_LEARNED_DRAWER, false);
         mTitle = getTitle();
@@ -255,16 +236,7 @@ public final class DSPManager extends Activity
         if (!isDrawerOpen())
         {
             menu.findItem(R.id.mdisplaydevmsg).setTitle(getString(R.string.displaydevmsg, getString(devMsgDisplay ? R.string.removetext : R.string.displaytext)));
-            if (themeApp == 0)
-                menu.findItem(R.id.themeswitch).setTitle(getString(R.string.theme, getString(R.string.darktheme)));
-            else if (themeApp == 1)
-                menu.findItem(R.id.themeswitch).setTitle(getString(R.string.theme, getString(R.string.lighttheme)));
-            else if (themeApp == 2)
-                menu.findItem(R.id.themeswitch).setTitle(getString(R.string.theme, getString(R.string.defaulttheme)));
-            else if (themeApp == 3)
-                menu.findItem(R.id.themeswitch).setTitle(getString(R.string.theme, getString(R.string.redtheme)));
-            else if (themeApp == 4)
-                menu.findItem(R.id.themeswitch).setTitle(getString(R.string.theme, getString(R.string.ideatheme)));
+
             if (effectMode == 0)
                 menu.findItem(R.id.globaleffectitm).setTitle(getString(R.string.globaleffect_title, getString(R.string.globalreg)));
             else
@@ -295,14 +267,6 @@ public final class DSPManager extends Activity
         case R.id.mdisplaydevmsg:
             devMsgDisplay = !devMsgDisplay;
             preferencesMode.edit().putBoolean("dsp.app.showdevmsg", devMsgDisplay).commit();
-            return true;
-        case R.id.themeswitch:
-            themeApp++;
-            if(themeApp > 4)
-                themeApp = 0;
-            preferencesMode.edit().putInt("dsp.app.theme", themeApp).commit();
-            startActivity(new Intent(this, DSPManager.class));
-            finish();
             return true;
         case R.id.globaleffectitm:
         	effectMode++;
@@ -346,16 +310,6 @@ public final class DSPManager extends Activity
         setUpNavigationDrawer(
             findViewById(R.id.dsp_navigation_drawer),
             findViewById(R.id.dsp_drawer_layout));
-        if (themeApp == 0)
-            mDrawerListView.setBackgroundColor(ResourcesCompat.getColor(getResources(), R.color.navigation_drawerdark, null));
-        else if (themeApp == 1)
-            mDrawerListView.setBackgroundColor(ResourcesCompat.getColor(getResources(), R.color.navigation_drawerlight, null));
-        else if (themeApp == 2)
-            mDrawerListView.setBackgroundColor(ResourcesCompat.getColor(getResources(), R.color.navigation_drawerdefault, null));
-        else if (themeApp == 3)
-            mDrawerListView.setBackgroundColor(ResourcesCompat.getColor(getResources(), R.color.navigation_drawerred, null));
-        else if (themeApp == 4)
-            mDrawerListView.setBackgroundColor(ResourcesCompat.getColor(getResources(), R.color.navigation_draweridea, null));
     }
     public void savePresetDialog()
     {

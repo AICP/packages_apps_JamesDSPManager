@@ -107,7 +107,7 @@ public class EqualizerSurface extends SurfaceView
         mHeight = bottom - top;
         float barWidth = getResources().getDimension(R.dimen.bar_width);
         mControlBar.setStrokeWidth(barWidth);
-        mControlBarKnob.setShadowLayer(barWidth * 0.5f, 0, 0,ResourcesCompat.getColor(getResources(), R.color.off_white, null));
+        mControlBarKnob.setShadowLayer(barWidth * 0.5f, 0, 0, ResourcesCompat.getColor(getResources(), R.color.off_white, null));
         /**
          * red > +7
          * yellow > +3
@@ -115,62 +115,15 @@ public class EqualizerSurface extends SurfaceView
          * holo_blue < 0
          * holo_blue_dark < 3
          */
-        if (DSPManager.themeApp == 0)
-            mFrequencyResponseBg.setShader(new LinearGradient(0, 0, 0, mHeight,
-                                           new int[] {ResourcesCompat.getColor(getResources(), R.color.eq_reddark, null),
-                                        		   ResourcesCompat.getColor(getResources(), R.color.eq_yellowdark, null),
-                                        		   ResourcesCompat.getColor(getResources(), R.color.eq_holo_brightdark, null),
-                                        		   ResourcesCompat.getColor(getResources(), R.color.eq_holo_bluedark, null),
-                                        		   ResourcesCompat.getColor(getResources(), R.color.eq_holo_darkdark, null)
-                                                     },
-                                           new float[] {0, 0.2f, 0.45f, 0.6f, 1f},
-                                           Shader.TileMode.CLAMP));
-        else if (DSPManager.themeApp == 1)
-            mFrequencyResponseBg.setShader(new LinearGradient(0, 0, 0, mHeight,
-                                           new int[] {ResourcesCompat.getColor(getResources(), R.color.eq_redlight, null),
-                                                   ResourcesCompat.getColor(getResources(), R.color.eq_yellowlight, null),
-                                                   ResourcesCompat.getColor(getResources(), R.color.eq_holo_brightlight, null),
-                                                   ResourcesCompat.getColor(getResources(), R.color.eq_holo_bluelight, null),
-                                                   ResourcesCompat.getColor(getResources(), R.color.eq_holo_darklight, null)
-                                                     },
-                                           new float[] {0, 0.2f, 0.45f, 0.6f, 1f},
-                                           Shader.TileMode.CLAMP));
-        else if (DSPManager.themeApp == 3)
-            mFrequencyResponseBg.setShader(new LinearGradient(0, 0, 0, mHeight,
-                                           new int[] {ResourcesCompat.getColor(getResources(), R.color.eq_redred, null),
-                                                   ResourcesCompat.getColor(getResources(), R.color.eq_yellowred, null),
-                                                   ResourcesCompat.getColor(getResources(), R.color.eq_holo_brightred, null),
-                                                   ResourcesCompat.getColor(getResources(), R.color.eq_holo_bluered, null),
-                                                   ResourcesCompat.getColor(getResources(), R.color.eq_holo_darkred, null)
-                                                     },
-                                           new float[] {0, 0.2f, 0.45f, 0.6f, 1f},
-                                           Shader.TileMode.CLAMP));
-        else if (DSPManager.themeApp == 4)
-            mFrequencyResponseBg.setShader(new LinearGradient(0, 0, 0, mHeight,
-                                           new int[] {ResourcesCompat.getColor(getResources(), R.color.eq_redidea, null),
-                                                   ResourcesCompat.getColor(getResources(), R.color.eq_yellowidea, null),
-                                                   ResourcesCompat.getColor(getResources(), R.color.eq_holo_brightidea, null),
-                                                   ResourcesCompat.getColor(getResources(), R.color.eq_holo_blueidea, null),
-                                                   ResourcesCompat.getColor(getResources(), R.color.eq_holo_darkidea, null)
-                                                     },
-                                           new float[] {0, 0.2f, 0.45f, 0.6f, 1f},
-                                           Shader.TileMode.CLAMP));
-        else
-            mFrequencyResponseBg.setShader(new LinearGradient(0, 0, 0, mHeight,
-                                           new int[] {ResourcesCompat.getColor(getResources(), R.color.eq_red, null),
-                                                   ResourcesCompat.getColor(getResources(), R.color.eq_yellow, null),
-                                                   ResourcesCompat.getColor(getResources(), R.color.eq_holo_bright, null),
-                                                   ResourcesCompat.getColor(getResources(), R.color.eq_holo_blue, null),
-                                                   ResourcesCompat.getColor(getResources(), R.color.eq_holo_dark, null)
-                                                     },
-                                           new float[] {0, 0.2f, 0.45f, 0.6f, 1f},
-                                           Shader.TileMode.CLAMP));
-        mControlBar.setShader(new LinearGradient(0, 0, 0, mHeight,
-                              new int[] {ResourcesCompat.getColor(getResources(), R.color.cb_shader, null),
-                                         ResourcesCompat.getColor(getResources(), R.color.cb_shader_alpha, null)
-                                        },
-                              new float[] {0, 1},
-                              Shader.TileMode.CLAMP));
+        mFrequencyResponseBg.setShader(new LinearGradient(0, 0, 0, mHeight,
+                new int[]{ResourcesCompat.getColor(getResources(), R.color.eq_reddark, null),
+                        ResourcesCompat.getColor(getResources(), R.color.eq_yellowdark, null),
+                        ResourcesCompat.getColor(getResources(), R.color.eq_holo_brightdark, null),
+                        ResourcesCompat.getColor(getResources(), R.color.eq_holo_bluedark, null),
+                        ResourcesCompat.getColor(getResources(), R.color.eq_holo_darkdark, null)
+                },
+                new float[]{0, 0.2f, 0.45f, 0.6f, 1f},
+                Shader.TileMode.CLAMP));
     }
 
     public void setBand(int i, float value)
