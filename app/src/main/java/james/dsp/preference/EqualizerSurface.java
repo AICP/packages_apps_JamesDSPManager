@@ -116,11 +116,11 @@ public class EqualizerSurface extends SurfaceView
          * holo_blue_dark < 3
          */
         mFrequencyResponseBg.setShader(new LinearGradient(0, 0, 0, mHeight,
-                new int[]{ResourcesCompat.getColor(getResources(), R.color.eq_reddark, null),
-                        ResourcesCompat.getColor(getResources(), R.color.eq_yellowdark, null),
-                        ResourcesCompat.getColor(getResources(), R.color.eq_holo_brightdark, null),
-                        ResourcesCompat.getColor(getResources(), R.color.eq_holo_bluedark, null),
-                        ResourcesCompat.getColor(getResources(), R.color.eq_holo_darkdark, null)
+                new int[]{ResourcesCompat.getColor(getResources(), R.color.eq_high, null),
+                        ResourcesCompat.getColor(getResources(), R.color.eq_mid_high, null),
+                        ResourcesCompat.getColor(getResources(), R.color.eq_mid, null),
+                        ResourcesCompat.getColor(getResources(), R.color.eq_mid_low, null),
+                        ResourcesCompat.getColor(getResources(), R.color.eq_low, null)
                 },
                 new float[]{0, 0.2f, 0.45f, 0.6f, 1f},
                 Shader.TileMode.CLAMP));
