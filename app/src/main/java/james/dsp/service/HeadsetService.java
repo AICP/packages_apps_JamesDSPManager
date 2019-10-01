@@ -58,7 +58,6 @@ public class HeadsetService extends Service
 	*
 	* @Co-founder alankila
 	*/
-	Bitmap iconLarge;
 	public static int modeEffect;
 	public final static UUID EFFECT_TYPE_CUSTOM = UUID.fromString("f98765f4-c321-5de6-9a45-123459495ab2");
 	public final static UUID EFFECT_JAMESDSP = UUID.fromString("f27317f4-c984-4de6-9a90-545759495bf2");
@@ -505,7 +504,6 @@ class StartUpOptimiserThread implements Runnable {
                     Log.i(TAG, "Speaker mode");
             }
         }
-		iconLarge = BitmapFactory.decodeResource(getResources(), R.drawable.icon);
 		preferencesMode = getSharedPreferences(DSPManager.SHARED_PREFERENCES_BASENAME + "." + "settings", 0);
 		if (!preferencesMode.contains("dsp.app.modeEffect"))
 			preferencesMode.edit().putInt("dsp.app.modeEffect", 0).commit();
@@ -543,11 +541,7 @@ class StartUpOptimiserThread implements Runnable {
 		unregisterReceiver(mPreferenceUpdateReceiver);
 		unregisterReceiver(mBtReceiver);
 		stopForeground(true);
-		if (iconLarge != null)
-		{
-			iconLarge.recycle();
-			iconLarge = null;
-		}
+
 		mAudioSessions.clear();
 		if (JamesDSPGbEf != null)
 			JamesDSPGbEf.release();
