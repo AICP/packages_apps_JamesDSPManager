@@ -16,7 +16,6 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
-import android.content.res.Resources;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
@@ -42,17 +41,13 @@ import james.dsp.R;
 import james.dsp.service.HeadsetService;
 import james.dsp.widgets.CustomDrawerLayout;
 
-import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileFilter;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.io.OutputStream;
-import java.io.OutputStreamWriter;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -100,11 +95,6 @@ public final class DSPManager extends Activity
     private boolean mFromSavedInstanceState;
     private boolean mUserLearnedDrawer;
 
-    //==================================
-    // ViewPager
-    //==================================
-    protected MyAdapter pagerAdapter;
-    protected ViewPager viewPager;
 
     //==================================
     // Fields
@@ -154,10 +144,14 @@ public final class DSPManager extends Activity
         effectMode = preferencesMode.getInt("dsp.app.modeEffect", 0);
         mUserLearnedDrawer = preferencesMode.getBoolean(PREF_USER_LEARNED_DRAWER, false);
         mTitle = getTitle();
+
         ActionBar mActionBar = getActionBar();
-        mActionBar.setDisplayHomeAsUpEnabled(true);
-        mActionBar.setHomeButtonEnabled(true);
-        mActionBar.setDisplayShowTitleEnabled(true);
+        if (mActionBar != null) {
+            mActionBar.setDisplayHomeAsUpEnabled(true);
+            mActionBar.setHomeButtonEnabled(true);
+            mActionBar.setDisplayShowTitleEnabled(true);
+        }
+
         if (savedInstanceState != null)
         {
             mCurrentSelectedPosition = savedInstanceState.getInt(STATE_SELECTED_POSITION);
@@ -168,7 +162,8 @@ public final class DSPManager extends Activity
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             initializeNotificationChannel();
             startForegroundService(serviceIntent);
-        } else startService(serviceIntent);
+        } else
+            startService(serviceIntent);
 
         sendBroadcast(new Intent(DSPManager.ACTION_UPDATE_PREFERENCES));
         setUpUi();
@@ -291,7 +286,7 @@ public final class DSPManager extends Activity
         mTitles = getTitles();
         mEntries = getEntries();
         setContentView(R.layout.activity_main);
-        mDrawerListView = (ListView)findViewById(R.id.dsp_navigation_drawer);
+        mDrawerListView = findViewById(R.id.dsp_navigation_drawer);
         mDrawerListView.setOnItemClickListener(new AdapterView.OnItemClickListener()
         {
             @Override
@@ -574,19 +569,19 @@ public final class DSPManager extends Activity
     */
     private List<HashMap<String, String>> getTitles()
     {
-        ArrayList<HashMap<String, String>> tmpList = new ArrayList<HashMap<String, String>>();
+        ArrayList<HashMap<String, String>> tmpList = new ArrayList<>();
         // Headset
-        HashMap<String, String> mTitleMap = new HashMap<String, String>();
+        HashMap<String, String> mTitleMap = new HashMap<>();
         mTitleMap.put("ICON", R.drawable.empty_icon + "");
         mTitleMap.put("TITLE", getString(R.string.headset_title));
         tmpList.add(mTitleMap);
         // Speaker
-        mTitleMap = new HashMap<String, String>();
+        mTitleMap = new HashMap<>();
         mTitleMap.put("ICON", R.drawable.empty_icon + "");
         mTitleMap.put("TITLE", getString(R.string.speaker_title));
         tmpList.add(mTitleMap);
         // Bluetooth
-        mTitleMap = new HashMap<String, String>();
+        mTitleMap = new HashMap<>();
         mTitleMap.put("ICON", R.drawable.empty_icon + "");
         mTitleMap.put("TITLE", getString(R.string.bluetooth_title));
         tmpList.add(mTitleMap);
@@ -598,11 +593,11 @@ public final class DSPManager extends Activity
     */
     private String[] getEntries()
     {
-        ArrayList<String> entryString = new ArrayList<String>();
+        ArrayList<String> entryString = new ArrayList<>();
         entryString.add("headset");
         entryString.add("speaker");
         entryString.add("bluetooth");
-        return entryString.toArray(new String[entryString.size()]);
+        return entryString.toArray(new String[0]);
     }
 
     //==================================
@@ -634,106 +629,16 @@ public final class DSPManager extends Activity
         }
     }
 
-    public class MyAdapter extends FragmentPagerAdapter
-    {
-        private final String[] entries;
-        private final List<HashMap<String, String>> titles;
-
-        public MyAdapter(FragmentManager fm)
-        {
-            super(fm);
-            entries = DSPManager.mEntries;
-            titles = DSPManager.mTitles;
-        }
-
-        @Override
-        public CharSequence getPageTitle(int position)
-        {
-            return titles.get(position).get("TITLE");
-        }
-
-        public String[] getEntries()
-        {
-            return entries;
-        }
-
-        @Override
-        public int getCount()
-        {
-            return entries.length;
-        }
-
-        @Override
-        public Fragment getItem(int position)
-        {
-            final DSPScreen dspFragment = new DSPScreen();
-            Bundle b = new Bundle();
-            b.putString("config", entries[position]);
-            dspFragment.setArguments(b);
-            return dspFragment;
-        }
-    }
-
     public static class HelpFragment extends DialogFragment
     {
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle state)
         {
             View v = inflater.inflate(R.layout.help, null);
-            TextView tv = (TextView)v.findViewById(R.id.help);
+            TextView tv = v.findViewById(R.id.help);
             tv.setText(R.string.help_text);
             return v;
         }
-    }
-    private String readFromFile(Context context, String path) {
-
-        String ret = "";
-
-        try {
-            InputStream inputStream = context.openFileInput(path);
-
-            if ( inputStream != null ) {
-                InputStreamReader inputStreamReader = new InputStreamReader(inputStream);
-                BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
-                String receiveString = "";
-                StringBuilder stringBuilder = new StringBuilder();
-
-                while ( (receiveString = bufferedReader.readLine()) != null ) {
-                    stringBuilder.append(receiveString);
-                }
-
-                inputStream.close();
-                ret = stringBuilder.toString();
-            }
-        }
-        catch (FileNotFoundException e) {
-            Log.e("login activity", "File not found: " + e.toString());
-        } catch (IOException e) {
-            Log.e("login activity", "Can not read file: " + e.toString());
-        }
-
-        return ret;
-    }
-    public void writeToFile(String data)
-    {
-    	File path = new File(benchmarkPath);
-        if(!path.exists())
-            path.mkdirs();
-        final File file = new File(path, wisdomTxt);
-        try
-        {
-            file.createNewFile();
-            FileOutputStream fOut = new FileOutputStream(file);
-            OutputStreamWriter myOutWriter = new OutputStreamWriter(fOut);
-            myOutWriter.append(data);
-            myOutWriter.close();
-            fOut.flush();
-            fOut.close();
-        }
-        catch (IOException e)
-        {
-            Log.e("Exception", "File write failed: " + e.toString());
-        } 
     }
 
     @RequiresApi(api = Build.VERSION_CODES.O)

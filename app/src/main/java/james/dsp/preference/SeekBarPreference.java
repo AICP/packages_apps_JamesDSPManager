@@ -94,15 +94,13 @@ public class SeekBarPreference extends Preference implements OnSeekBarChangeList
     @Override
     protected View onCreateView(ViewGroup parent)
     {
+        super.onCreateView(parent);
         RelativeLayout layout = null;
-        try
-        {
+        try {
             LayoutInflater mInflater = (LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             layout = (RelativeLayout) mInflater.inflate(R.layout.seek_bar_preference, parent, false);
-            mTitle = (TextView) layout.findViewById(android.R.id.title);
-        }
-        catch (Exception e)
-        {
+            mTitle = layout.findViewById(android.R.id.title);
+        } catch (Exception e) {
         }
         return layout;
     }
@@ -115,7 +113,7 @@ public class SeekBarPreference extends Preference implements OnSeekBarChangeList
         {
             // move our seekbar to the new view we've been given
             ViewParent oldContainer = mSeekBar.getParent();
-            ViewGroup newContainer = (ViewGroup) view.findViewById(R.id.seekBarPrefBarContainer);
+            ViewGroup newContainer = view.findViewById(R.id.seekBarPrefBarContainer);
             if (oldContainer != newContainer)
             {
                 // remove the seekbar from the old view
@@ -137,18 +135,18 @@ public class SeekBarPreference extends Preference implements OnSeekBarChangeList
      *
      * @param view
      */
-    protected void updateView(View view)
+    private void updateView(View view)
     {
         try
         {
             RelativeLayout layout = (RelativeLayout) view;
-            mStatusText = (TextView) layout.findViewById(R.id.seekBarPrefValue);
+            mStatusText = layout.findViewById(R.id.seekBarPrefValue);
             mStatusText.setText(String.valueOf(mCurrentValue));
             mStatusText.setMinimumWidth(30);
             mSeekBar.setProgress(mCurrentValue - mMinValue);
-            TextView unitsRight = (TextView) layout.findViewById(R.id.seekBarPrefUnitsRight);
+            TextView unitsRight = layout.findViewById(R.id.seekBarPrefUnitsRight);
             unitsRight.setText(mUnitsRight);
-            TextView unitsLeft = (TextView) layout.findViewById(R.id.seekBarPrefUnitsLeft);
+            TextView unitsLeft = layout.findViewById(R.id.seekBarPrefUnitsLeft);
             unitsLeft.setText(mUnitsLeft);
         }
         catch (Exception e)

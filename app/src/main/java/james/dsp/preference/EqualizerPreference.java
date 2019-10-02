@@ -18,9 +18,7 @@ import java.util.Locale;
 
 public class EqualizerPreference extends DialogPreference
 {
-    protected static final String TAG = EqualizerPreference.class.getSimpleName();
-
-    protected EqualizerSurface mListEqualizer, mDialogEqualizer;
+    private EqualizerSurface mListEqualizer, mDialogEqualizer;
 
     private HeadsetService mHeadsetService;
 
@@ -46,7 +44,7 @@ public class EqualizerPreference extends DialogPreference
         setDialogLayoutResource(R.layout.equalizer_popup);
     }
 
-    protected void updateDspFromDialogEqualizer()
+    private void updateDspFromDialogEqualizer()
     {
         if (mHeadsetService != null)
         {
@@ -72,7 +70,7 @@ public class EqualizerPreference extends DialogPreference
     protected void onBindDialogView(View view)
     {
         super.onBindDialogView(view);
-        mDialogEqualizer = (EqualizerSurface) view.findViewById(R.id.FrequencyResponse);
+        mDialogEqualizer = view.findViewById(R.id.FrequencyResponse);
         mDialogEqualizer.setOnTouchListener(new OnTouchListener()
         {
             @Override
@@ -106,10 +104,10 @@ public class EqualizerPreference extends DialogPreference
     {
         if (positiveResult)
         {
-            String value = "";
+            StringBuilder value = new StringBuilder();
             for (int i = 0; i < 15; i++)
-                value += String.format(Locale.ROOT, "%.7f", mDialogEqualizer.getBand(i)) + ";";
-            persistString(value);
+                value.append(String.format(Locale.ROOT, "%.7f", mDialogEqualizer.getBand(i))).append(";");
+            persistString(value.toString());
             updateListEqualizerFromValue();
         }
         if (mHeadsetService != null)
@@ -121,7 +119,7 @@ public class EqualizerPreference extends DialogPreference
     protected void onBindView(View view)
     {
         super.onBindView(view);
-        mListEqualizer = (EqualizerSurface) view.findViewById(R.id.FrequencyResponse);
+        mListEqualizer = view.findViewById(R.id.FrequencyResponse);
         updateListEqualizerFromValue();
     }
 
