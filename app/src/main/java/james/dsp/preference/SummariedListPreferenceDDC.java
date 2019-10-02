@@ -24,7 +24,7 @@ public class SummariedListPreferenceDDC extends ListPreference
     }
 
     // Read file list from path
-    public static void getFileNameList(File path, String fileExt, ArrayList<String> fileList)
+    private static void getFileNameList(File path, String fileExt, ArrayList<String> fileList)
     {
         if (path.isDirectory())
         {
@@ -137,10 +137,5 @@ public class SummariedListPreferenceDDC extends ListPreference
         {
             setSummary("");
         }
-    }
-
-    public void refreshFromPreference()
-    {
-        onSetInitialValue(true, null);
     }
 }

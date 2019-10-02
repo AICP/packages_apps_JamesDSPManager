@@ -28,7 +28,7 @@ public class SummariedListPreferenceWithCustom extends ListPreference
     }
 
     // Read file list from path
-    public static void getFileNameList(File path, String fileExt, ArrayList<String> fileList)
+    private static void getFileNameList(File path, String fileExt, ArrayList<String> fileList)
     {
         if (path.isDirectory())
         {
@@ -68,7 +68,7 @@ public class SummariedListPreferenceWithCustom extends ListPreference
                 kernelFile.mkdirs();
                 kernelFile.mkdir();
             }
-            ArrayList<String> kernelList = new ArrayList<String>();
+            ArrayList<String> kernelList = new ArrayList<>();
             getFileNameList(kernelFile, ".irs", kernelList);
             getFileNameList(kernelFile, ".wav", kernelList);
             getFileNameList(kernelFile, ".flac", kernelList);
@@ -164,21 +164,18 @@ public class SummariedListPreferenceWithCustom extends ListPreference
             setSummary("");
         }
     }
-
-    public void refreshFromPreference()
-    {
-        onSetInitialValue(true, null);
-    }
 }
+
 class ResamplerThread implements Runnable {
-	String path;
-	String filename;
-	int tarSmpRate;
+	private String path;
+	private String filename;
+	private int tarSmpRate;
 	   ResamplerThread(String p, String f, int s) {
 	       path = p;
 	       filename = f;
 	       tarSmpRate = s;
 	   }
+
 	   public void run() {
            final String finalName = JdspImpResToolbox.OfflineAudioResample(path, filename, tarSmpRate);
            new Handler(Looper.getMainLooper()).post(new Runnable() {

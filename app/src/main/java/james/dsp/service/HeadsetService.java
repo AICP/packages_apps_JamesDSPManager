@@ -10,8 +10,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.SharedPreferences;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.media.AudioManager;
 import android.media.audiofx.AudioEffect;
 import android.os.Binder;
@@ -31,7 +29,6 @@ import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.nio.charset.Charset;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
@@ -63,8 +60,8 @@ public class HeadsetService extends Service
 	public final static UUID EFFECT_JAMESDSP = UUID.fromString("f27317f4-c984-4de6-9a90-545759495bf2");
 	public class JDSPModule
 	{
-		public AudioEffect JamesDSP;
-		public JDSPModule(int sessionId)
+		AudioEffect JamesDSP;
+		JDSPModule(int sessionId)
 		{
 			try
 			{
@@ -94,19 +91,11 @@ public class HeadsetService extends Service
 			}
 		}
 
-		public void release()
+		void release()
 		{
 			JamesDSP.release();
 		}
 
-		/**
-		* Proxies call to AudioEffect.setParameter(byte[], byte[]) which is
-		* available via reflection.
-		*
-		* @param audioEffect
-		* @param parameter
-		* @param value
-		*/
 		private byte[] IntToByte(int[] input)
 		{
 			int int_index, byte_index;
@@ -132,7 +121,7 @@ public class HeadsetService extends Service
 			value |= (encodedValue[0] & 0xFF);
 			return value;
 		}
-		private void setParameterIntArray(AudioEffect audioEffect, int parameter, int value[])
+		private void setParameterIntArray(AudioEffect audioEffect, int parameter, int[] value)
 		{
 			try
 			{
@@ -593,6 +582,7 @@ class StartUpOptimiserThread implements Runnable {
 	*
 	* @param levels
 	*/
+
 	public void setEqualizerLevels(float[] levels)
 	{
 		mOverriddenEqualizerLevels = levels;
@@ -727,8 +717,7 @@ class StartUpOptimiserThread implements Runnable {
 				/* Equalizer state is in a single string preference with all values separated by ; */
 				if (mOverriddenEqualizerLevels != null)
 				{
-					for (short i = 0; i < mOverriddenEqualizerLevels.length; i++)
-						eqLevels[i] = mOverriddenEqualizerLevels[i];
+                    System.arraycopy(mOverriddenEqualizerLevels, 0, eqLevels, 0, mOverriddenEqualizerLevels.length);
 				}
 				else
 				{
