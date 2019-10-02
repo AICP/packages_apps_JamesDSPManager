@@ -16,7 +16,6 @@ import android.util.AttributeSet;
 import android.view.SurfaceView;
 import android.view.View;
 import james.dsp.R;
-import james.dsp.activity.DSPManager;
 
 public class EqualizerSurface extends SurfaceView
 {

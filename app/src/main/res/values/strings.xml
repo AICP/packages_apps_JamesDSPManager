@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="app_name">James DSP</string>
+  <string name="app_name" translatable="false">James DSP</string>
   <string name="headset_title">Headset</string>
   <string name="speaker_title">Speaker</string>
   <string name="notification_channel_name">@string/app_name</string>
@@ -110,13 +110,7 @@
   <string name="displaydevmsg">%1$s module info</string>
   <string name="removetext">Remove</string>
   <string name="displaytext">Display</string>
-  <string name="theme">Current theme:%1$s</string>
   <string name="globaleffect_title">Reg:%1$s</string>
-  <string name="darktheme">Dark</string>
-  <string name="lighttheme">Light</string>
-  <string name="defaulttheme">Default</string>
-  <string name="redtheme">R/G Complementary</string>
-  <string name="ideatheme">Idea</string>
   <string name="globalreg">Global(Require Direct volume disabled)</string>
   <string name="traditionalreg">Conventional</string>
   <!-- Drawer -->

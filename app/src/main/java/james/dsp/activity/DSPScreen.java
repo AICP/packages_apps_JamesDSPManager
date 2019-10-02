@@ -25,8 +25,6 @@ import james.dsp.service.HeadsetService;
  */
 public final class DSPScreen extends PreferenceFragment
 {
-    protected static final String TAG = DSPScreen.class.getSimpleName();
-
     private final OnSharedPreferenceChangeListener listener = new OnSharedPreferenceChangeListener()
     {
         @Override
