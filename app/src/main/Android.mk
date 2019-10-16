@@ -24,6 +24,10 @@ LOCAL_PACKAGE_NAME := JamesDSPManager
 
 LOCAL_OVERRIDES_PACKAGES := MusicFX
 
+LOCAL_REQUIRED_MODULES := \
+    libjamesDSPImpulseToolbox \
+    libjamesdsp
+
 include $(BUILD_PACKAGE)
 
 # Use the folloing include to make our test apk.
