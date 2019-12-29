@@ -112,9 +112,4 @@ public class SummariedTextPreferenceRanged extends EditTextPreference
     	}
         super.setText(value);
     }
-
-    public void refreshFromPreference()
-    {
-        onSetInitialValue(true, null);
-    }
 }
