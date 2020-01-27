@@ -88,11 +88,6 @@
             android:key="dsp.convolver.resampler"
             android:defaultValue=""
             android:dialogTitle="@string/dialog_offlineimpulseresponseresampler_title" />
-        <james.dsp.preference.SummariedListPreferenceWithCustom
-            android:title="@string/dialog_impulseresponse"
-            android:key="dsp.convolver.files"
-            android:defaultValue=""
-            android:dialogTitle="@string/dialog_impulseresponse" />
         <james.dsp.preference.SummariedTextPreferenceRanged
             android:key="dsp.convolver.gain"
             android:defaultValue="0.0"
