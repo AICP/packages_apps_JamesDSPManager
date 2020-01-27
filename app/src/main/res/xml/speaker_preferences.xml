@@ -77,6 +77,11 @@
         android:summaryOff="@string/pref_convolver_summary_off"
         android:title="@string/pref_convolver_enable" />
   </PreferenceCategory>
+  <james.dsp.preference.SummariedListPreferenceWithCustom
+      android:title="@string/dialog_impulseresponse"
+      android:key="dsp.convolver.files"
+      android:defaultValue=""
+      android:dialogTitle="@string/dialog_impulseresponse" />
 
   <PreferenceCategory android:title="@string/pref_ddc_title" android:key="dsp.ddc">
     <CheckBoxPreference
