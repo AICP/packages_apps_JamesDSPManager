@@ -27,6 +27,7 @@
   <string name="pref_headset_virtual_title">Virtuele ruimte-effect</string>
   <string name="pref_headset_virtual_summary_on">\'Virtuele ruimte-effect\' ingeschakeld</string>
   <string name="pref_headset_virtual_summary_off">\'Virtuele ruimte-effect\' uitgeschakeld</string>
+  <string name="pref_room_title">Selecteer type ruimte (Progenitor2)</string>
   <string name="dialog_room">Type ruimte</string>
   <string name="dialog_mode">Modus</string>
   <string name="pref_convolver_title">Convolver</string>
@@ -62,11 +63,14 @@
   <string name="load_preset">Voorkeurinstelling laden</string>
   <string name="new_preset">Nieuwe voorinstelling…</string>
   <string name="removetext">Verwijderen</string>
-  <string name="darktheme">Donker</string>
-  <string name="lighttheme">Licht</string>
-  <string name="defaulttheme">Standaard</string>
   <string name="traditionalreg">Conventioneel</string>
+  <string name="navigation_drawer_toggle">Schakel scherm</string>
+  <string name="navigation_drawer_open">Open navigatiescherm</string>
+  <string name="navigation_drawer_close">Sluit navigatiescherm</string>
+  <string name="navigation_toggle_drawer">Wisselen naar navigatiescherm</string>
+  <string name="navigation_toggle_tabbed">Wisselen naar tabbladen</string>
   <string name="save_error_bluetooth">"Kan bluetooth.xml niet opslaan. Heb je ooit een Bluetooth tab geopend?"</string>
   <string name="help_title">Help</string>
   <string name="advanced_options">Geavanceerde opties</string>
+  <string name="notification_string">James DSP actief</string>
 </resources>
