@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "08a45245_3a78c702",
+        "filename": "app/src/main/res/values/arrays.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 1459
+      },
+      "writtenOn": "2020-02-16T13:35:53Z",
+      "side": 1,
+      "message": "Don\u0027t remove custom, add it in the end",
+      "revId": "f6055c3ea653dad682afdb978a03b2e58a3e8d41",
+      "serverId": "9f904cbb-a964-4fab-a7dc-5cfc4d5c238b",
+      "unresolved": true
+    }
+  ]
+}
