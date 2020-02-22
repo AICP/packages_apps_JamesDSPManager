@@ -9,21 +9,21 @@
     <item>24 dB</item>
   </string-array>
   <string-array name="headphone_preset">
-    <item>Kleine ruimte</item>
-    <item>Middelgrote ruimte</item>
-    <item>Grote ruimte</item>
+    <item>Mały pokój</item>
+    <item>Średni pokój</item>
+    <item>Duży pokój</item>
     <item>Plate high</item>
     <item>Plate low</item>
     <item>Long reverb 1</item>
     <item>Long reverb 2</item>
   </string-array>
   <string-array name="bassboost_modes">
-    <item>Inschakelen</item>
+    <item>Włącz</item>
     <item>A Bit</item>
-    <item>Licht</item>
-    <item>Gemiddeld</item>
+    <item>Lekki</item>
+    <item>Umiarkowany</item>
     <item>Super</item>
-    <item>Extreem</item>
+    <item>Ekstremalny</item>
   </string-array>
   <string-array name="quality_level">
     <item>Truncate to 40﹪</item>
@@ -31,18 +31,6 @@
     <item>Truncate to 60﹪</item>
     <item>Truncate to 70﹪</item>
     <item>Truncate to 80﹪</item>
-    <item>Vol</item>
-  </string-array>
-  <string-array name="stereowide_modes">
-    <item>A Bit</item>
-    <item>Licht</item>
-    <item>Gemiddeld</item>
-    <item>Hoog</item>
-    <item>Super</item>
-  </string-array>
-  <string-array name="bs2b_modes">
-    <item>A Bit</item>
-    <item>Slight</item>
-    <item>Gemiddeld</item>
+    <item>Pełny</item>
   </string-array>
 </resources>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+  <string-array name="compression_pregain">
+    <item>0 dB</item>
+    <item>4 dB</item>
+    <item>8 dB</item>
+    <item>12 dB</item>
+    <item>18 dB</item>
+    <item>24 dB</item>
+  </string-array>
+  <string-array name="headphone_preset">
+    <item>Kis szoba</item>
+    <item>Közepes szoba</item>
+    <item>Nagy szoba</item>
+    <item>Plate Reverb (magas)</item>
+    <item>Plate Reverb (mély)</item>
+    <item>Long Reverb1</item>
+    <item>Long Reverb2</item>
+  </string-array>
+  <string-array name="bassboost_modes">
+    <item>Engedélyezés</item>
+    <item>Csekély</item>
+    <item>Enyhe</item>
+    <item>Mérsékelt</item>
+    <item>Szupererős</item>
+    <item>Extrém</item>
+  </string-array>
+  <string-array name="bassboost_filtertype">
+    <item>Lineáris fázis \'2049 taps low pass filter\'</item>
+    <item>Lineáris fázis \'4096 taps low pass filter\'</item>
+  </string-array>
+  <string-array name="equalizer_filtertype">
+    <item>Minimális fázis</item>
+    <item>Lineáris fázis</item>
+  </string-array>
+  <string-array name="quality_level">
+    <item>Lebutítva: 40&amp;#65130;</item>
+    <item>Lebutítva: 50&amp;#65130;</item>
+    <item>Lebutítva: 60&amp;#65130;</item>
+    <item>Lebutítva: 70&amp;#65130;</item>
+    <item>Lebutítva: 80&amp;#65130;</item>
+    <item>Teljes</item>
+  </string-array>
+  <string-array name="stereowide_modes">
+    <item>Csekély</item>
+    <item>Enyhe</item>
+    <item>Mérsékelt</item>
+    <item>Erőteljes</item>
+    <item>Szupererős</item>
+  </string-array>
+  <string-array name="bs2b_modes">
+    <item>Csekély</item>
+    <item>Enyhe</item>
+    <item>Mérsékelt</item>
+  </string-array>
+</resources>
