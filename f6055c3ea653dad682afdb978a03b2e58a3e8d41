@@ -16,6 +16,24 @@
       "revId": "f6055c3ea653dad682afdb978a03b2e58a3e8d41",
       "serverId": "9f904cbb-a964-4fab-a7dc-5cfc4d5c238b",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e3406b60_9ece2665",
+        "filename": "app/src/main/res/values/arrays.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 343
+      },
+      "writtenOn": "2020-02-24T10:06:58Z",
+      "side": 1,
+      "message": "custom was not \"removed\" as you can see. We just added the new presets under custom, which is used for creating your own preset, right?",
+      "parentUuid": "08a45245_3a78c702",
+      "revId": "f6055c3ea653dad682afdb978a03b2e58a3e8d41",
+      "serverId": "9f904cbb-a964-4fab-a7dc-5cfc4d5c238b",
+      "unresolved": true
     }
   ]
 }
