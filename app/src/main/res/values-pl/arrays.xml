@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+  <string-array name="compression_pregain">
+    <item>0 dB</item>
+    <item>4 dB</item>
+    <item>8 dB</item>
+    <item>12 dB</item>
+    <item>18 dB</item>
+    <item>24 dB</item>
+  </string-array>
+  <string-array name="headphone_preset">
+    <item>Mały pokój</item>
+    <item>Średni pokój</item>
+    <item>Duży pokój</item>
+    <item>Wysoka płyta</item>
+    <item>Niska płyta</item>
+    <item>Długie odwrócenie 1</item>
+    <item>Długie odwrócenie 2</item>
+  </string-array>
+  <string-array name="bassboost_modes">
+    <item>Włącz</item>
+    <item>Zestaw</item>
+    <item>Lekki</item>
+    <item>Umiarkowany</item>
+    <item>Super</item>
+    <item>Ekstremalny</item>
+  </string-array>
+  <string-array name="bassboost_filtertype">
+    <item>Faza liniowa 2049 kranów filtra dolnego przepuszczającego</item>
+    <item>Faza liniowa 4097 kranów filtra dolnego przepuszczającego</item>
+  </string-array>
+  <string-array name="equalizer_filtertype">
+    <item>Faza minimalna</item>
+    <item>Faza liniowa</item>
+  </string-array>
+  <string-array name="quality_level">
+    <item>Przycinanie do 40&amp;#65130;</item>
+    <item>Przycinanie do 50&amp;#65130;</item>
+    <item>Przycinanie do 60&amp;#65130;</item>
+    <item>Przycinanie do 70&amp;#65130;</item>
+    <item>Przycinanie do 80&amp;#65130;</item>
+    <item>Pełny</item>
+  </string-array>
+  <string-array name="stereowide_modes">
+    <item>Zestaw</item>
+    <item>Lekki</item>
+    <item>Umiarkowany</item>
+    <item>Wysoki</item>
+    <item>Super</item>
+  </string-array>
+  <string-array name="bs2b_modes">
+    <item>Zestaw</item>
+    <item>Lekki</item>
+    <item>Umiarkowany</item>
+  </string-array>
+</resources>
