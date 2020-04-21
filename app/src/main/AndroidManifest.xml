@@ -31,6 +31,10 @@
                 <action android:name="android.media.action.DISPLAY_AUDIO_EFFECT_CONTROL_PANEL" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
+
+            <intent-filter>
+                <action android:name="android.service.quicksettings.action.QS_TILE_PREFERENCES"/>
+            </intent-filter>
         </activity>
         <service
             android:exported="false"
@@ -45,5 +49,15 @@
         </receiver>
 	<meta-data android:name="com.sec.android.support.multiwindow" android:value="true">
         </meta-data>
+        <service
+            android:name=".tile.JamesTile"
+            android:icon="@drawable/notification_icon"
+            android:label="JamesDSP"
+            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
+            <intent-filter>
+                <action
+                    android:name="android.service.quicksettings.action.QS_TILE"/>
+            </intent-filter>
+        </service>
     </application>
 </manifest> 
