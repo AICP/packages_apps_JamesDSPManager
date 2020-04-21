@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "b08dccaa_15648405",
+        "filename": "app/src/main/java/james/dsp/utils/ParameterUtils.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1375
+      },
+      "writtenOn": "2020-04-21T11:58:03Z",
+      "side": 1,
+      "message": "same here",
+      "revId": "9232d24e9920abfdde1deab40a4291748d03a7d8",
+      "serverId": "9f904cbb-a964-4fab-a7dc-5cfc4d5c238b",
+      "unresolved": true
+    }
+  ]
+}
