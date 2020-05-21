@@ -114,6 +114,7 @@
   <string name="new_preset">Nowe ustawienie…</string>
   <string name="removetext">Usuń</string>
   <string name="displaytext">Wyświetl</string>
+  <string name="globalreg">Globalny (wymaga wyłączonej głośności bezpośredniej)</string>
   <string name="traditionalreg">Konwencje</string>
   <string name="navigation_drawer_toggle">Przełącznik menu</string>
   <string name="navigation_drawer_open">Otwórz wysuwane menu</string>
@@ -126,6 +127,7 @@
   <string name="load_error_bluetooth">Nie udało się załadować bluetooth.xml. Nie znaleziono pliku bądź brak uprawnień</string>
   <string name="load_error_headset">Nie udało się załadować headset.xml. Nie znaleziono pliku bądź brak uprawnień</string>
   <string name="load_error_speaker">Nie udało się załadować speaker.xml. Nie znaleziono pliku bądź brak uprawnień</string>
+  <string name="warn_null">Nazwa pliku NIE może być PUSTA, lub ładowanie nie powiodło się przy następnym ustawieniu wstępnym</string>
   <string name="help_title">Pomoc</string>
   <string name="advanced_options">Opcje Zaawansowane</string>
   <string name="notification_string">JamesDSP aktywny</string>

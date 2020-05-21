@@ -12,17 +12,45 @@
     <item>Malá místnost</item>
     <item>Střední místnost</item>
     <item>Hala</item>
-    <item>Plate high</item>
-    <item>Plate low</item>
-    <item>Long reverb 1</item>
-    <item>Long reverb 2</item>
+    <item>Vysoká</item>
+    <item>Nízká</item>
+    <item>Dlouhý dozvuk 1</item>
+    <item>Dlouhý dozvuk 2</item>
   </string-array>
   <string-array name="bassboost_modes">
     <item>Zapnout</item>
-    <item>A Bit</item>
-    <item>Slight</item>
-    <item>Moderate</item>
+    <item>Trochu</item>
+    <item>Mírně</item>
+    <item>Středně</item>
     <item>Super</item>
-    <item>Extreme</item>
+    <item>Extrémě</item>
+  </string-array>
+  <string-array name="bassboost_filtertype">
+    <item>Lineární amplituda s 2049 kroky jako dolní propust</item>
+    <item>Lineární amplituda s 4097 kroky jako dolní propust</item>
+  </string-array>
+  <string-array name="equalizer_filtertype">
+    <item>Minimální amplituda</item>
+    <item>Lineární fáze</item>
+  </string-array>
+  <string-array name="quality_level">
+    <item>Limit na 40&amp;#65130;</item>
+    <item>Limit na 50&amp;#65130;</item>
+    <item>Limit na 60&amp;#65130;</item>
+    <item>Limit na 70&amp;#65130;</item>
+    <item>Limit na 80&amp;#65130;</item>
+    <item>Plná</item>
+  </string-array>
+  <string-array name="stereowide_modes">
+    <item>Trochu</item>
+    <item>Mírný</item>
+    <item>Středně</item>
+    <item>Vysoký</item>
+    <item>Super</item>
+  </string-array>
+  <string-array name="bs2b_modes">
+    <item>Trochu</item>
+    <item>Mírně</item>
+    <item>Středně</item>
   </string-array>
 </resources>
