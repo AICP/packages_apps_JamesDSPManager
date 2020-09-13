@@ -39,9 +39,9 @@
   <string name="pref_ddc_enable">Inschakelen</string>
   <string name="dialog_sosmatrix">DDC-bestand</string>
   <string name="text_ddc_dir_isempty">DDC map %1$s is leeg</string>
-  <string name="dialog_tubebass">Bas [Real:&#x2192;0 &#8211; 10]</string>
-  <string name="dialog_tubemid">Midden [Real:&#x2192;0 &#8211; 10]</string>
-  <string name="dialog_tubetreble">Treble [Real:&#x2192;0 &#8211; 10]</string>
+  <string name="dialog_tubebass">Bas [Real:→0 – 10]</string>
+  <string name="dialog_tubemid">Midden [Real:→0 – 10]</string>
+  <string name="dialog_tubetreble">Treble [Real:→0 – 10]</string>
   <string name="dialog_quality">Kwaliteit</string>
   <string name="mono_conv">Mono</string>
   <string name="stereo_conv">Stereo</string>
@@ -85,16 +85,14 @@
   <string name="eq_preset_techno">Techno</string>
   <string name="save_preset">Voorkeursinstellingen opslaan</string>
   <string name="load_preset">Voorkeurinstelling laden</string>
-  <string name="new_preset">Nieuwe voorinstelling&#8230;</string>
+  <string name="new_preset">Nieuwe voorinstelling…</string>
   <string name="removetext">Verwijderen</string>
   <string name="traditionalreg">Conventioneel</string>
-  <!-- Drawer -->
   <string name="navigation_drawer_toggle">Schakel scherm</string>
   <string name="navigation_drawer_open">Open navigatiescherm</string>
   <string name="navigation_drawer_close">Sluit navigatiescherm</string>
   <string name="navigation_toggle_drawer">Wisselen naar navigatiescherm</string>
   <string name="navigation_toggle_tabbed">Wisselen naar tabbladen</string>
-  <!-- IO ERROR -->
   <string name="save_error_bluetooth">"Kan bluetooth.xml niet opslaan. Heb je ooit een Bluetooth tab geopend?"</string>
   <string name="save_error_headset">"Kan headset.xml niet opslaan. Heeft u ooit het tabblad Headset geopend?"</string>
   <string name="save_error_speaker">"Kan speaker.xml niet opslaan. Heeft u ooit het tabblad Speaker geopend?"</string>
