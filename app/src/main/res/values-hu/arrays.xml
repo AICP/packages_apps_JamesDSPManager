@@ -34,11 +34,11 @@
     <item>Lineáris fázis</item>
   </string-array>
   <string-array name="quality_level">
-    <item>Lebutítva: 40&amp;#65130;</item>
-    <item>Lebutítva: 50&amp;#65130;</item>
-    <item>Lebutítva: 60&amp;#65130;</item>
-    <item>Lebutítva: 70&amp;#65130;</item>
-    <item>Lebutítva: 80&amp;#65130;</item>
+    <item>Lebutítva: 40﹪</item>
+    <item>Lebutítva: 50﹪</item>
+    <item>Lebutítva: 60﹪</item>
+    <item>Lebutítva: 70﹪</item>
+    <item>Lebutítva: 80﹪</item>
     <item>Teljes</item>
   </string-array>
   <string-array name="stereowide_modes">

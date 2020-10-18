@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+  <string name="eq_preset_custom">دڵخواز</string>
+  <string name="navigation_drawer_toggle">چەسپاندنی پلیکانە</string>
+  <string name="navigation_drawer_open">کردنەوەی پلیکانەی جێنیشاندەر</string>
+  <string name="navigation_drawer_close">داخستنی پلیکانەی جێنیشاندەر</string>
+  <string name="navigation_toggle_drawer">گۆڕین بۆ پلیکانە</string>
   <string name="advanced_options">بژاردەکانی پەرەسەندوو</string>
 </resources>
