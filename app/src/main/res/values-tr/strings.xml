@@ -99,6 +99,30 @@
   <string name="pref_headset_bs2b_enable">BS2B\'yi etkinleştir</string>
   <string name="eq_preset_flat">Düz</string>
   <string name="eq_preset_custom">Özel</string>
+  <string name="eq_preset_bb">Bass Yükseltme</string>
+  <string name="eq_preset_bigbb">Büyük Bass Yükseltme</string>
+  <string name="eq_preset_boosted">Yükseltildi</string>
+  <string name="eq_preset_boseqc35">Bose QComfort 35</string>
+  <string name="eq_preset_classic">Klasik</string>
+  <string name="eq_preset_club">Kulüp</string>
+  <string name="eq_preset_dance">Dans</string>
+  <string name="eq_preset_fullbass">Full Bass</string>
+  <string name="eq_preset_fullbt">Full Bass &amp; Tiz</string>
+  <string name="eq_preset_fullt">Full Tiz</string>
+  <string name="eq_preset_headphone">Kulaklıklar</string>
+  <string name="eq_preset_largehall">Geniş Salon</string>
+  <string name="eq_preset_live">Canlı</string>
+  <string name="eq_preset_party">Parti</string>
+  <string name="eq_preset_perfecteq">Mükemmel Ekolayzer</string>
+  <string name="eq_preset_pop">Pop</string>
+  <string name="eq_preset_reggae">Reggae</string>
+  <string name="eq_preset_rock">Rock</string>
+  <string name="eq_preset_smallsp">Küçük Hoparlörler</string>
+  <string name="eq_preset_soft">Hafif</string>
+  <string name="eq_preset_softrock">Hafif Rock</string>
+  <string name="eq_preset_sonyv300">Sony MDR-V300</string>
+  <string name="eq_preset_superbb">Süper Bass Yükseltmesi</string>
+  <string name="eq_preset_techno">Tekno</string>
   <string name="save_preset">Ön ayarı kaydet</string>
   <string name="load_preset">Ön ayarı yükle</string>
   <string name="new_preset">Yeni ön ayar…</string>
@@ -125,4 +149,5 @@
     GUI Yazar: Antti S. Lankila \n
   </string>
   <string name="advanced_options">Gelişmiş seçenekler</string>
+  <string name="notification_string">JamesDSP aktif</string>
 </resources>

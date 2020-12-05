@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+  <string-array name="compression_pregain">
+    <item>0 dB</item>
+    <item>4 dB</item>
+    <item>8 dB</item>
+    <item>12 dB</item>
+    <item>18 dB</item>
+    <item>24 dB</item>
+  </string-array>
+  <string-array name="headphone_preset">
+    <item>Sala pequena</item>
+    <item>Sala média</item>
+    <item>Sala grande</item>
+    <item>Placa alta</item>
+    <item>Placa baixa</item>
+    <item>Reverberação longa 1</item>
+    <item>Reverberação longa 2</item>
+  </string-array>
+  <string-array name="bassboost_modes">
+    <item>Ativado</item>
+    <item>Um Bit</item>
+    <item>Leve</item>
+    <item>Moderado</item>
+    <item>Enorme</item>
+    <item>Extremo</item>
+  </string-array>
+  <string-array name="bassboost_filtertype">
+    <item>Filtro de passagem de baixo nível na fase Linear 2049</item>
+    <item>Filtro de passagem de baixo nível na fase linear 4097</item>
+  </string-array>
+  <string-array name="equalizer_filtertype">
+    <item>Fase mínima</item>
+    <item>Fase linear</item>
+  </string-array>
+  <string-array name="quality_level">
+    <item>Truncar para 40﹪</item>
+    <item>Truncar para 50﹪</item>
+    <item>Truncar para 60﹪</item>
+    <item>Truncar para 70﹪</item>
+    <item>Truncar para 80﹪</item>
+    <item>Completa</item>
+  </string-array>
+  <string-array name="stereowide_modes">
+    <item>Um Bit</item>
+    <item>Leve</item>
+    <item>Moderado</item>
+    <item>Alto</item>
+    <item>Enorme</item>
+  </string-array>
+  <string-array name="bs2b_modes">
+    <item>Um Bit</item>
+    <item>Leve</item>
+    <item>Moderado</item>
+  </string-array>
+</resources>

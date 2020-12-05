@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="eq_preset_bb">Підсилення басу</string>
+  <string name="eq_preset_bigbb">Велике підсилення басу</string>
+  <string name="eq_preset_boosted">Збільшено</string>
+</resources>

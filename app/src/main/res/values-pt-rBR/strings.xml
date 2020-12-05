@@ -99,6 +99,31 @@
   <string name="pref_headset_bs2b_enable">Ativar BS2B</string>
   <string name="eq_preset_flat">Plano</string>
   <string name="eq_preset_custom">Personalizado</string>
+  <string name="eq_preset_bb">Ganho de graves</string>
+  <string name="eq_preset_bigbb">Grande ganho de graves</string>
+  <string name="eq_preset_boosted">Reforçado</string>
+  <string name="eq_preset_boseqc35">Bose QComfort 35</string>
+  <string name="eq_preset_classic">Clássico</string>
+  <string name="eq_preset_club">Clube</string>
+  <string name="eq_preset_dance">Dança</string>
+  <string name="eq_preset_fullbass">Grave total</string>
+  <string name="eq_preset_fullbt">Grave total &amp; Agudos</string>
+  <string name="eq_preset_fullt">Agudos totais</string>
+  <string name="eq_preset_headphone">Fones de ouvido</string>
+  <string name="eq_preset_largehall">Salão grande</string>
+  <string name="eq_preset_live">Ao vivo</string>
+  <string name="eq_preset_party">Festa</string>
+  <string name="eq_preset_perfecteq">Equalizador Perfeito</string>
+  <string name="eq_preset_pop">Pop</string>
+  <string name="eq_preset_reggae">Reggae</string>
+  <string name="eq_preset_rock">Rock</string>
+  <string name="eq_preset_ska">Ska</string>
+  <string name="eq_preset_smallsp">Alto-falantes pequenos</string>
+  <string name="eq_preset_soft">Suave</string>
+  <string name="eq_preset_softrock">Rock suave</string>
+  <string name="eq_preset_sonyv300">Sony MDR-V300</string>
+  <string name="eq_preset_superbb">Super ganho de Graves</string>
+  <string name="eq_preset_techno">Techno</string>
   <string name="save_preset">Salvar predefinição</string>
   <string name="load_preset">Carregar predefinição</string>
   <string name="new_preset">Nova predefinição…</string>
@@ -125,4 +150,5 @@
     Autor GUI: Antti S. Lankila \n
   </string>
   <string name="advanced_options">Opções avançadas</string>
+  <string name="notification_string">JamesDSP ativo</string>
 </resources>

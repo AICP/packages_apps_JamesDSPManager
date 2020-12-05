@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+  <string-array name="compression_pregain">
+    <item>0 dB</item>
+    <item>4 dB</item>
+    <item>8 dB</item>
+    <item>12 dB</item>
+    <item>18 dB</item>
+    <item>24 dB</item>
+  </string-array>
+  <string-array name="headphone_preset">
+    <item>小さな部屋</item>
+    <item>中型の部屋</item>
+    <item>大きな部屋</item>
+    <item>プレートハイ</item>
+    <item>プレートロー</item>
+    <item>長い残響効果 1</item>
+    <item>長い残響効果 2</item>
+  </string-array>
+  <string-array name="bassboost_modes">
+    <item>有効</item>
+    <item>僅か</item>
+    <item>弱め</item>
+    <item>中程度</item>
+    <item>強め</item>
+    <item>最高</item>
+  </string-array>
+  <string-array name="bassboost_filtertype">
+    <item>リニアフェーズ 2049タップ ローパスフィルタ</item>
+    <item>リニアフェーズ 4097タップ ローパスフィルタ</item>
+  </string-array>
+  <string-array name="equalizer_filtertype">
+    <item>ミニマムフェーズ</item>
+    <item>リニアフェーズ</item>
+  </string-array>
+  <string-array name="quality_level">
+    <item>40﹪ に切り捨て</item>
+    <item>50﹪ に切り捨て</item>
+    <item>60﹪ に切り捨て</item>
+    <item>70﹪ に切り捨て</item>
+    <item>80﹪ に切り捨て</item>
+    <item>フル</item>
+  </string-array>
+  <string-array name="stereowide_modes">
+    <item>僅か</item>
+    <item>弱め</item>
+    <item>中程度</item>
+    <item>高</item>
+    <item>強め</item>
+  </string-array>
+  <string-array name="bs2b_modes">
+    <item>僅か</item>
+    <item>弱め</item>
+    <item>中程度</item>
+  </string-array>
+</resources>
