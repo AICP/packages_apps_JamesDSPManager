@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="eq_preset_bb">Tingkatkan Bass</string>
+  <string name="eq_preset_bigbb">Peningkatan Bass Besar</string>
+  <string name="eq_preset_boosted">Telah ditingkatkan</string>
+  <string name="eq_preset_boseqc35">Bose QComfort 35</string>
+  <string name="eq_preset_classic">Klasik</string>
+  <string name="eq_preset_club">Klub</string>
+  <string name="eq_preset_dance">Dansa</string>
+  <string name="eq_preset_fullbass">Bass Tinggi</string>
+  <string name="eq_preset_fullbt">Bass Tinggi &amp; Treble</string>
+  <string name="eq_preset_fullt">Treble Tinggi</string>
+  <string name="eq_preset_headphone">Headphone</string>
+  <string name="eq_preset_largehall">Aula Lebar</string>
+  <string name="eq_preset_live">Langsung</string>
+  <string name="eq_preset_party">Pesta</string>
+  <string name="eq_preset_perfecteq">EQ Sempurna</string>
+  <string name="eq_preset_pop">Pop</string>
+  <string name="eq_preset_reggae">Reggae</string>
+  <string name="eq_preset_rock">Rock</string>
+  <string name="eq_preset_ska">Ska</string>
+  <string name="eq_preset_smallsp">Speaker kecil</string>
+  <string name="eq_preset_soft">Lembut</string>
+  <string name="eq_preset_softrock">Rock lembut</string>
+  <string name="eq_preset_sonyv300">Sony MDR-V300</string>
+  <string name="eq_preset_superbb">Peningkatan Bass Super</string>
+  <string name="eq_preset_techno">Tekno</string>
+  <string name="notification_string">JamesDSP aktif</string>
+</resources>
