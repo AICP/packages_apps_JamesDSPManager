@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+  <string-array name="compression_pregain">
+    <item>0 dB</item>
+    <item>4 dB</item>
+    <item>8 dB</item>
+    <item>12 dB</item>
+    <item>18 dB</item>
+    <item>24 dB</item>
+  </string-array>
+  <string-array name="headphone_preset">
+    <item>Stanza piccola</item>
+    <item>Stanza media</item>
+    <item>Stanza grande</item>
+    <item>Piastra alta</item>
+    <item>Piastra bassa</item>
+    <item>Riverbero lungo 1</item>
+    <item>Riverbero lungo 2</item>
+  </string-array>
+  <string-array name="bassboost_modes">
+    <item>Attivo</item>
+    <item>Un Bit</item>
+    <item>Lieve</item>
+    <item>Moderato</item>
+    <item>Super</item>
+    <item>Estremo</item>
+  </string-array>
+  <string-array name="bassboost_filtertype">
+    <item>Fase lineare 2049 tocca il filtro di passaggio basso</item>
+    <item>Fase lineare 4097 tocca il filtro di passaggio basso</item>
+  </string-array>
+  <string-array name="equalizer_filtertype">
+    <item>Fase minima</item>
+    <item>Fase lineare</item>
+  </string-array>
+  <string-array name="quality_level">
+    <item>Tronca a 40﹪</item>
+    <item>Tronca a 50﹪</item>
+    <item>Tronca a 60﹪</item>
+    <item>Tronca a 70﹪</item>
+    <item>Tronca a 80﹪</item>
+    <item>Pieno</item>
+  </string-array>
+  <string-array name="stereowide_modes">
+    <item>Un Bit</item>
+    <item>Lieve</item>
+    <item>Moderato</item>
+    <item>Alto</item>
+    <item>Super</item>
+  </string-array>
+  <string-array name="bs2b_modes">
+    <item>Un Bit</item>
+    <item>Lieve</item>
+    <item>Moderato</item>
+  </string-array>
+</resources>

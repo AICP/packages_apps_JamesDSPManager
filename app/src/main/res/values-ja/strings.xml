@@ -99,6 +99,31 @@
   <string name="pref_headset_bs2b_enable">BS2B を有効化</string>
   <string name="eq_preset_flat">フラット</string>
   <string name="eq_preset_custom">カスタム</string>
+  <string name="eq_preset_bb">低音ブースト</string>
+  <string name="eq_preset_bigbb">大きな低音ブースト</string>
+  <string name="eq_preset_boosted">ブースト中</string>
+  <string name="eq_preset_boseqc35">Bose QComfort 35</string>
+  <string name="eq_preset_classic">クラシック</string>
+  <string name="eq_preset_club">クラブ</string>
+  <string name="eq_preset_dance">ダンス</string>
+  <string name="eq_preset_fullbass">フル低音</string>
+  <string name="eq_preset_fullbt">低音 &amp; 高音</string>
+  <string name="eq_preset_fullt">フル高音</string>
+  <string name="eq_preset_headphone">ヘッドホン</string>
+  <string name="eq_preset_largehall">大きいホール</string>
+  <string name="eq_preset_live">ライブ</string>
+  <string name="eq_preset_party">パーティー</string>
+  <string name="eq_preset_perfecteq">パーフェクトイコライザ</string>
+  <string name="eq_preset_pop">ポップ</string>
+  <string name="eq_preset_reggae">レゲエ</string>
+  <string name="eq_preset_rock">ロック</string>
+  <string name="eq_preset_ska">スカ</string>
+  <string name="eq_preset_smallsp">小さいスピーカー</string>
+  <string name="eq_preset_soft">ソフト</string>
+  <string name="eq_preset_softrock">ソフトロック</string>
+  <string name="eq_preset_sonyv300">Sony MDR-V300</string>
+  <string name="eq_preset_superbb">スーパー低音ブースト</string>
+  <string name="eq_preset_techno">テクノ</string>
   <string name="save_preset">プリセットを保存</string>
   <string name="load_preset">プリセットを読み込み</string>
   <string name="new_preset">新規プリセット…</string>
@@ -125,4 +150,5 @@
     GUI 作者: Antti S. Lankila \n
   </string>
   <string name="advanced_options">高度な設定</string>
+  <string name="notification_string">JamesDSP は有効です</string>
 </resources>

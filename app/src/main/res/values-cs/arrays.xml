@@ -34,11 +34,11 @@
     <item>Lineární fáze</item>
   </string-array>
   <string-array name="quality_level">
-    <item>Limit na 40&amp;#65130;</item>
-    <item>Limit na 50&amp;#65130;</item>
-    <item>Limit na 60&amp;#65130;</item>
-    <item>Limit na 70&amp;#65130;</item>
-    <item>Limit na 80&amp;#65130;</item>
+    <item>Limit na 40﹪</item>
+    <item>Limit na 50﹪</item>
+    <item>Limit na 60﹪</item>
+    <item>Limit na 70﹪</item>
+    <item>Limit na 80﹪</item>
     <item>Plná</item>
   </string-array>
   <string-array name="stereowide_modes">

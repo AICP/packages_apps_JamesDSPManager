@@ -15,6 +15,7 @@
   <string name="pref_compression_summary_on">Kompresja jest włączona</string>
   <string name="pref_compression_summary_off">Kompresja jest wyłączona</string>
   <string name="pref_compression_enable">Włącz kompresję danych</string>
+  <string name="dialog_pregain">Wstępny wzrost</string>
   <string name="dialog_threshold">Próg [Int:-80 – dB]</string>
   <string name="dialog_knee">Kolano [Int:0 – 40 dB]</string>
   <string name="dialog_ratio">Stosunek [Int:-20 – 20]</string>
@@ -62,10 +63,17 @@
   <string name="pref_analogmodelling_summary_on">Modelowanie analogowe jest włączone</string>
   <string name="pref_analogmodelling_summary_off">Modelowanie analogowe jest wyłączone</string>
   <string name="pref_analogmodelling_enable">Włączono modelowanie analogowe</string>
+  <string name="dialog_tubedrive">Preamp(Harmonics) [Rzeczywiste:→0 – 12]</string>
+  <string name="dialog_tubebass">Bass [Rzeczywisty:→ – 10]</string>
+  <string name="dialog_tubemid">Środkowy [Rzeczywisty:→ – 10]</string>
+  <string name="dialog_tubetreble">Tantal [Rzeczywisty:→ – 10]</string>
+  <string name="dialog_offlineimpulseresponseresampler">Resampler offline (121dB SNR 90% BW)</string>
   <string name="dialog_offlineimpulseresponseresampler_title">Wybierz podczerwień, aby spróbować ponownie</string>
   <string name="dialog_impulseresponse">Reakcja impulsowa</string>
+  <string name="dialog_convgain">Wielkość IR [Real:→-80.0 – 30.0]dB</string>
   <string name="dialog_quality">Jakość</string>
   <string name="dialog_length">Długość odpowiedzi impulsowej</string>
+  <string name="text_ir_dir_isempty">Katalog IR %1$s jest pusty</string>
   <string name="doesntexist">Błąd: Nie wybrano pliku IR</string>
   <string name="ddcdoesntexist">Błąd: Nie wybrano pliku DDC</string>
   <string name="mono_conv">Mono</string>
@@ -73,6 +81,12 @@
   <string name="fullstereo_conv">Pełne stereo</string>
   <string name="resamplerstr">Przekierowano na częstotliwość próbkowania urządzenia audio:%1$d\nUtworzono nową odpowiedź impulsu w: %2$s</string>
   <string name="resamplererror">Proszę najpierw zarejestrować silnik dźwięku, włączając efekt globalny lub otwórz odtwarzacz, jeśli używasz konwencjonalnego trybu w celu podwojenia częstotliwości próbkowania z silnika audio</string>
+  <string name="impfilefault">Awaria ładowania impulsu\nProszę wybrać poprawny plik odpowiedzi impulsu!</string>
+  <string name="unmatchedsamplerate">Odpowiedź impulsu %1$s próbka (%2$d) nie pasuje do próbkowania sterownika (%3$d)\nUżyjesz resamplera niskiej jakości do ponownego podania…\nUżyj Resampler Offline dla wyższej jakości resampling!</string>
+  <string name="convolversuccess">Odpowiedź impulsu %1$s załadowano\nCzęstotliwość próbki:%2$d\nInformacje o kanale:%3$s\nPróbki na kanale:%4$d\nPróbki na kanał (przycięte):%5$d\nStrategia partycji:%6$d</string>
+  <string name="memoryallocatefail">Nie można przydzielić pamięci dla convolver</string>
+  <string name="limiter_threshold">Próg graniczny [dB:-60 – -0.1]</string>
+  <string name="limiter_release">Wydanie ogranicznika [ms:1.5 – 2000]</string>
   <string name="pref_headset_stereowide_title">Rozszerzenie stereo</string>
   <string name="pref_headset_stereowide_summary_on">Rozszerzenie stereo jest włączone</string>
   <string name="pref_headset_stereowide_summary_off">Rozszerzenie stereo jest wyłączone</string>
@@ -94,6 +108,7 @@
   <string name="eq_preset_dance">Taneczna</string>
   <string name="eq_preset_fullbass">Pełny bas</string>
   <string name="eq_preset_fullbt">Basy i soprany</string>
+  <string name="eq_preset_fullt">Pełne tony wysokie</string>
   <string name="eq_preset_headphone">Słuchawki</string>
   <string name="eq_preset_largehall">Duża sala</string>
   <string name="eq_preset_live">Na żywo</string>
@@ -112,8 +127,10 @@
   <string name="save_preset">Zapisz ustawienie</string>
   <string name="load_preset">Załaduj ustawienie</string>
   <string name="new_preset">Nowe ustawienie…</string>
+  <string name="displaydevmsg">Informacje o module %1$s</string>
   <string name="removetext">Usuń</string>
   <string name="displaytext">Wyświetl</string>
+  <string name="globaleffect_title">Reg:%1$s</string>
   <string name="globalreg">Globalny (wymaga wyłączonej głośności bezpośredniej)</string>
   <string name="traditionalreg">Konwencje</string>
   <string name="navigation_drawer_toggle">Przełącznik menu</string>
@@ -129,6 +146,9 @@
   <string name="load_error_speaker">Nie udało się załadować speaker.xml. Nie znaleziono pliku bądź brak uprawnień</string>
   <string name="warn_null">Nazwa pliku NIE może być PUSTA, lub ładowanie nie powiodło się przy następnym ustawieniu wstępnym</string>
   <string name="help_title">Pomoc</string>
+  <string name="help_text">    <b>Kredyt:</b>\n\n
+    Autor GUI: Antti S. Lankila \n
+  </string>
   <string name="advanced_options">Opcje Zaawansowane</string>
   <string name="notification_string">JamesDSP aktywny</string>
 </resources>

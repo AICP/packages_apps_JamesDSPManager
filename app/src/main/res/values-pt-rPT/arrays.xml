@@ -9,48 +9,48 @@
     <item>24 dB</item>
   </string-array>
   <string-array name="headphone_preset">
-    <item>Habitación pequeña</item>
-    <item>Habitación mediana</item>
-    <item>Habitación grande</item>
+    <item>Quarto pequeno</item>
+    <item>Quarto médio</item>
+    <item>Quarto grande</item>
     <item>Placa alta</item>
-    <item>Placa baja</item>
-    <item>Reverberación larga 1</item>
-    <item>Reverberación larga 2</item>
+    <item>Placa baixa</item>
+    <item>Reverberação longa 1</item>
+    <item>Reverberação longa 2</item>
   </string-array>
   <string-array name="bassboost_modes">
-    <item>Habilitar</item>
-    <item>Un poco</item>
-    <item>Ligero</item>
-    <item>Moderado</item>
+    <item>Ativar</item>
+    <item>Um Bit</item>
+    <item>Pouco</item>
+    <item>Moderada</item>
     <item>Super</item>
     <item>Extremo</item>
   </string-array>
   <string-array name="bassboost_filtertype">
-    <item>Linear phase 2049 taps low pass filter</item>
-    <item>Linear phase 4097 taps low pass filter</item>
+    <item>Filtro de passagem de baixo nível da fase linear 2049</item>
+    <item>Filtro de passagem de baixo nível da fase linear 4097</item>
   </string-array>
   <string-array name="equalizer_filtertype">
-    <item>Fase mínima</item>
-    <item>Fase lineal</item>
+    <item>Passo mínimo</item>
+    <item>Fase linear</item>
   </string-array>
   <string-array name="quality_level">
-    <item>Truncar a 40﹪</item>
-    <item>Truncar a 50﹪</item>
-    <item>Truncar a 60﹪</item>
-    <item>Truncar a 70﹪</item>
-    <item>Truncar a 80﹪</item>
+    <item>Truncar para 40﹪</item>
+    <item>Truncar para 50﹪</item>
+    <item>Truncar para 60﹪</item>
+    <item>Truncar para 70﹪</item>
+    <item>Truncar para 80﹪</item>
     <item>Completo</item>
   </string-array>
   <string-array name="stereowide_modes">
-    <item>Un poco</item>
-    <item>Ligero</item>
-    <item>Moderado</item>
+    <item>Um Bit</item>
+    <item>Pouco</item>
+    <item>Moderada</item>
     <item>Alto</item>
     <item>Super</item>
   </string-array>
   <string-array name="bs2b_modes">
-    <item>Un poco</item>
-    <item>Ligero</item>
-    <item>Moderado</item>
+    <item>Um Bit</item>
+    <item>Pouco</item>
+    <item>Moderada</item>
   </string-array>
 </resources>

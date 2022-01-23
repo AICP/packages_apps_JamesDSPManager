@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="eq_preset_bb">Ενίσχυση μπάσων</string>
+  <string name="eq_preset_bigbb">Μέγιστη ενίσχυση μπάσων</string>
+  <string name="eq_preset_boosted">Ενισχυμένο</string>
+  <string name="eq_preset_boseqc35">Τύπος Bose QComfort 35</string>
+  <string name="eq_preset_classic">Κλασική</string>
+  <string name="eq_preset_club">Κλαμπ</string>
+  <string name="eq_preset_dance">Χορευτικό</string>
+  <string name="eq_preset_fullbass">Μέγιστα μπάσα</string>
+  <string name="eq_preset_fullbt">Μπάσα &amp; Υψηλές</string>
+  <string name="eq_preset_fullt">Μέγιστες υψηλές συχνότητες</string>
+  <string name="eq_preset_headphone">Ακουστικά</string>
+  <string name="eq_preset_largehall">Μεγάλη αίθουσα</string>
+  <string name="eq_preset_live">Ζωντανή</string>
+  <string name="eq_preset_party">Πάρτυ</string>
+  <string name="eq_preset_perfecteq">Τέλειος ισοστάθμιστης</string>
+  <string name="eq_preset_pop">Ποπ</string>
+  <string name="eq_preset_reggae">Ρέγκε</string>
+  <string name="eq_preset_rock">Ροκ</string>
+  <string name="eq_preset_ska">Σκα</string>
+  <string name="eq_preset_smallsp">Μικρά ηχεία</string>
+  <string name="eq_preset_soft">Απαλή</string>
+  <string name="eq_preset_softrock">Απαλό rock</string>
+  <string name="eq_preset_sonyv300">Τύπος Sony MDR-V300</string>
+  <string name="eq_preset_superbb">Ενίσχυση υπέρ μπάσων</string>
+  <string name="eq_preset_techno">Τύπος tecno</string>
+  <string name="notification_string">JamesDSP ενεργό</string>
+</resources>
