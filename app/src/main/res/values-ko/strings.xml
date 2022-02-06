@@ -79,7 +79,7 @@
   <string name="mono_conv">모노</string>
   <string name="stereo_conv">스테레오</string>
   <string name="fullstereo_conv">풀 스테레오</string>
-  <string name="resamplerstr">오디오 장치 샘플 속도로 리샘플링 : %1$d\n%2*$s에 새로운 임펄스 응답이 생성됨</string>
+  <string name="resamplerstr">오디오 장치 샘플 속도로 리샘플링 : %1$d\n %2$s 에 새로운 임펄스 응답이 생성됨</string>
   <string name="resamplererror">오디오 엔진에서 샘플 속도를 검색하려면 일반 모드를 사용하는 경우 전역 효과를 활성화하거나 음악 플레이어를 열어 오디오 엔진을 먼저 등록하십시오.</string>
   <string name="impfilefault">임펄스로드 실패\n 적절한 임펄스 응답 파일을 선택하십시오!</string>
   <string name="unmatchedsamplerate">임펄스 응답 %1$s 샘플링 속도 (%2$d)가 드라이버 샘플링 속도 (%3$d)와 일치하지 않습니다. \n 저품질의 리 샘플러를 사용하여 다시 샘플링합니다 ... \n 더 높은 품질의 리샘플링을 위해 오프라인 리 샘플러를 사용하십시오!</string>
